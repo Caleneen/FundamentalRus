@@ -207,7 +207,7 @@ export const resetStage = (stageIndex: number[], update = true as null | boolean
     }
     if (update !== null) {
         switchTab();
-        stageUpdate(update, true);
+        stageUpdate(update);
     }
 };
 
@@ -339,7 +339,7 @@ export const resetVacuum = (universe = false) => {
     assignResetInformation.trueEnergy();
 
     switchTab();
-    stageUpdate(true, true);
+    stageUpdate();
 };
 
 export const cloneBeforeReset = (depth: 'stage' | 'vacuum') => {
@@ -416,10 +416,10 @@ export const cloneBeforeReset = (depth: 'stage' | 'vacuum') => {
     if (depth !== 'stage') {
         clone.strange = [];
         for (let i = 0; i < player.strange.length; i++) {
-            clone.strange[i] = {
+            clone.strange.push({
                 current: player.strange[i].current,
                 total: player.strange[i].total
-            };
+            });
         }
         clone.history = {
             stage: {
@@ -542,6 +542,6 @@ export const loadFromClone = () => {
     }
 
     switchTab();
-    stageUpdate(true, true);
+    stageUpdate();
     player.clone = {};
 };
