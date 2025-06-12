@@ -15,7 +15,7 @@
         <aside id="loading">
             <h1 class="biggerWord">Fundamental</h1>
             <p class="whiteText">Игра загружается. Если не загружается (попсле попытки перезагрузиться), то ты можешь это зарепортить тут: <a href="https://discord.gg/JftTEJW83d" target="_blank" rel="noopener noreferrer">официальный сервер discord</a> или <a href="https://github.com/awWhy/Fundamental/issues" target="_blank" rel="noopener noreferrer"> официальный github</a> или <a href="https://github.com/Caleneen/FundamentalRus/issues" target="_blank" rel="noopener noreferrer">github перевода</a></p>
-            <noscript>Java Script disabled, game will not work without it</noscript>
+            <noscript>Java Script отключён, без него игра не будет рабтать</noscript>
         </aside>
         <div id="bigWindow" style="display: none;">
             <button type="button" id="globalToggle0" class="specialToggle" style="display: none;">OFF</button>
@@ -49,10 +49,10 @@
                             <button type="button" id="stageReset" tabindex="-1">Missing</button>
                         </section>
                         <section id="reset1Main" aria-label="Basic reset">
-                            <p class="whiteText stage1Only"><span class="orangeText">Discharge</span> resets Structures so spent <span class="orangeText">Energy</span> could be regained or to increase current boost.</p>
-                            <p class="whiteText stage2Only"><span class="blueText">Vaporization</span> resets Structures and Upgrades for <span class="grayText">Clouds</span>. Their gain is based on current amount of <span class="blueText">Drops</span>.</p>
-                            <p class="whiteText stage3Only"><img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false" id="rankImage">Current <span class="darkorchidText">Rank</span> is <span id="rankName">Missing</span>.<br>Resets Structures, Upgrades and Stage Researches.</p>
-                            <p class="whiteText stage4Only"><span class="orchidText">Collapse</span> resets Structures, Upgrades and all Researches for <span class="cyanText">Solar mass</span> and <span class="darkorchidText">Star remnants</span>.</p>
+                            <p class="whiteText stage1Only"><span class="orangeText">Разряжение</span> сбрасывает структуры и потраченная <span class="orangeText">энергия</span> может быть заработана снова для повышения буста.</p>
+                            <p class="whiteText stage2Only"><span class="blueText">Испарение</span> сбрасывает структуры и улучшения, получая <span class="grayText">облака</span>. Их заработок базирован на текущем количестве <span class="blueText">капель</span>.</p>
+                            <p class="whiteText stage3Only"><img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false" id="rankImage">Текущий <span class="darkorchidText">ранг</span> - <span id="rankName">Missing</span>.<br>Сбрасывает структуры, улучшения и исследования этапа.</p>
+                            <p class="whiteText stage4Only"><span class="orchidText">Коллапс</span> сбрасывает структуры, улучшения и все исследования, получая <span class="cyanText">солнечную массу</span> и <span class="darkorchidText">остатки звёзд</span>.</p>
                             <p class="whiteText stage5Only" id="mergeResetText">Missing</p>
                             <button type="button" id="reset1Button" tabindex="-1">Missing</button>
                         </section>
@@ -76,203 +76,203 @@
                             <img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false">
                             <div>
                                 <p><span id="building1Name">Placeholder</span>: <span id="building1Cur" class="whiteText">0</span> <span id="building1True" class="yellowText">[0]</span></p>
-                                <p id="building1ProdDiv" title="Missing"><span>producing</span>: <span id="building1Prod" class="whiteText">0</span></p>
+                                <p id="building1ProdDiv" title="Missing"><span>производит</span>: <span id="building1Prod" class="whiteText">0</span></p>
                             </div>
                             <div>
                                 <div>
                                     <p>x<span id="building1BuyX" class="whiteText">1</span></p>
                                     <div></div>
                                 </div>
-                                <button type="button" id="building1Btn" tabindex="-1">Need: Missing</button>
-                                <button type="button" id="toggleBuilding1" class="toggleBuilding" tabindex="-1">Auto ON</button>
+                                <button type="button" id="building1Btn" tabindex="-1">Нужно: Missing</button>
+                                <button type="button" id="toggleBuilding1" class="toggleBuilding" tabindex="-1">Авто ВКЛ</button>
                             </div>
                         </section>
                         <section id="building2" class="buyBuilding stageText" aria-labelledby="building2Name">
                             <img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false">
                             <div>
                                 <p><span id="building2Name">Placeholder</span>: <span id="building2Cur" class="whiteText">0</span> <span id="building2True" class="yellowText">[0]</span></p>
-                                <p id="building2ProdDiv" title="Missing"><span>producing</span>: <span id="building2Prod" class="whiteText">0</span></p>
+                                <p id="building2ProdDiv" title="Missing"><span>производит</span>: <span id="building2Prod" class="whiteText">0</span></p>
                             </div>
                             <div>
                                 <div>
                                     <p>x<span id="building2BuyX" class="whiteText">1</span></p>
                                     <div></div>
                                 </div>
-                                <button type="button" id="building2Btn" tabindex="-1">Need: Missing</button>
-                                <button type="button" id="toggleBuilding2" class="toggleBuilding" tabindex="-1">Auto ON</button>
+                                <button type="button" id="building2Btn" tabindex="-1">Нужно: Missing</button>
+                                <button type="button" id="toggleBuilding2" class="toggleBuilding" tabindex="-1">Авто ВКЛ</button>
                             </div>
                         </section>
                         <section id="building3" class="buyBuilding stageText" aria-labelledby="building3Name">
                             <img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false">
                             <div>
                                 <p><span id="building3Name">Placeholder</span>: <span id="building3Cur" class="whiteText">0</span> <span id="building3True" class="yellowText">[0]</span></p>
-                                <p id="building3ProdDiv" title="Missing"><span>producing</span>: <span id="building3Prod" class="whiteText">0</span></p>
+                                <p id="building3ProdDiv" title="Missing"><span>производит</span>: <span id="building3Prod" class="whiteText">0</span></p>
                             </div>
                             <div>
                                 <div>
                                     <p>x<span id="building3BuyX" class="whiteText">1</span></p>
                                     <div></div>
                                 </div>
-                                <button type="button" id="building3Btn" tabindex="-1">Need: Missing</button>
-                                <button type="button" id="toggleBuilding3" class="toggleBuilding" tabindex="-1">Auto ON</button>
+                                <button type="button" id="building3Btn" tabindex="-1">Нужно: Missing</button>
+                                <button type="button" id="toggleBuilding3" class="toggleBuilding" tabindex="-1">Авто ВКЛ</button>
                             </div>
                         </section>
                         <section id="building4" class="buyBuilding stageText" aria-labelledby="building4Name">
                             <img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false">
                             <div>
                                 <p><span id="building4Name">Placeholder</span>: <span id="building4Cur" class="whiteText">0</span> <span id="building4True" class="yellowText">[0]</span></p>
-                                <p id="building4ProdDiv" title="Missing"><span>producing</span>: <span id="building4Prod" class="whiteText">0</span></p>
+                                <p id="building4ProdDiv" title="Missing"><span>производит</span>: <span id="building4Prod" class="whiteText">0</span></p>
                             </div>
                             <div>
                                 <div>
                                     <p>x<span id="building4BuyX" class="whiteText">1</span></p>
                                     <div></div>
                                 </div>
-                                <button type="button" id="building4Btn" tabindex="-1">Need: Missing</button>
-                                <button type="button" id="toggleBuilding4" class="toggleBuilding" tabindex="-1">Auto ON</button>
+                                <button type="button" id="building4Btn" tabindex="-1">Нужно: Missing</button>
+                                <button type="button" id="toggleBuilding4" class="toggleBuilding" tabindex="-1">Авто ВКЛ</button>
                             </div>
                         </section>
                         <section id="building5" class="buyBuilding stageText" aria-labelledby="building5Name">
                             <img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false">
                             <div>
                                 <p><span id="building5Name">Placeholder</span>: <span id="building5Cur" class="whiteText">0</span> <span id="building5True" class="yellowText">[0]</span></p>
-                                <p id="building5ProdDiv" title="Missing"><span>producing</span>: <span id="building5Prod" class="whiteText">0</span></p>
+                                <p id="building5ProdDiv" title="Missing"><span>производит</span>: <span id="building5Prod" class="whiteText">0</span></p>
                             </div>
                             <div>
                                 <div>
                                     <p>x<span id="building5BuyX" class="whiteText">1</span></p>
                                     <div></div>
                                 </div>
-                                <button type="button" id="building5Btn" tabindex="-1">Need: Missing</button>
-                                <button type="button" id="toggleBuilding5" class="toggleBuilding" tabindex="-1">Auto ON</button>
+                                <button type="button" id="building5Btn" tabindex="-1">Нужно: Missing</button>
+                                <button type="button" id="toggleBuilding5" class="toggleBuilding" tabindex="-1">Авто ВКЛ</button>
                             </div>
                         </section>
                         <section id="building6" class="buyBuilding stageText" aria-labelledby="building6Name">
                             <img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false">
                             <div>
                                 <p><span id="building6Name">Placeholder</span>: <span id="building6Cur" class="whiteText">0</span> <span id="building6True" class="yellowText">[0]</span></p>
-                                <p id="building6ProdDiv" title="Missing"><span>producing</span>: <span id="building6Prod" class="whiteText">0</span></p>
+                                <p id="building6ProdDiv" title="Missing"><span>производит</span>: <span id="building6Prod" class="whiteText">0</span></p>
                             </div>
                             <div>
                                 <div>
                                     <p>x<span id="building6BuyX" class="whiteText">1</span></p>
                                     <div></div>
                                 </div>
-                                <button type="button" id="building6Btn" tabindex="-1">Need: Missing</button>
-                                <button type="button" id="toggleBuilding6" class="toggleBuilding" tabindex="-1">Auto ON</button>
+                                <button type="button" id="building6Btn" tabindex="-1">Нужно: Missing</button>
+                                <button type="button" id="toggleBuilding6" class="toggleBuilding" tabindex="-1">Авто ВКЛ</button>
                             </div>
                         </section>
                         <div id="buildingToggles">
-                            <button type="button" id="makeAllStructures" class="hollowButton">Make all</button>
+                            <button type="button" id="makeAllStructures" class="hollowButton">Сделать всё</button>
                             <div>
                                 <input type="number" id="buyAnyInput" step="1">
-                                <label for="buyAnyInput" class="popUpMenu">How many Structures to make at same time<br>(Will make max if set to 0, ignored when holding Shift or Ctrl)</label>
+                                <label for="buyAnyInput" class="popUpMenu">Сколько структур сделать одновременно <br>(Будет максимум если поставить 0, игнорируется при зажатии Shift или Ctrl)</label>
                             </div>
                             <div id="autoWaitMain">
                                 <input type="number" id="autoWaitInput" step="any">
-                                <label for="autoWaitInput" class="popUpMenu">How many times of the Structure cost Auto should wait before making that Structure</label>
+                                <label for="autoWaitInput" class="popUpMenu">Сколько структур за раз будет создаваться автоматически</label>
                             </div>
-                            <button type="button" id="toggleBuilding0" class="toggleBuilding" tabindex="-1">All ON</button>
+                            <button type="button" id="toggleBuilding0" class="toggleBuilding" tabindex="-1">Всё ВКЛ</button>
                         </div>
                     </article>
                     <div id="stageInfo" class="center">
                         <div class="stage1Only">
-                            <p id="tritiumEffect" class="cyanText">Tritium production of Molecules: <span class="blueText">0</span></p>
-                            <p id="preonCap" class="cyanText">Preons production hardcap starts at <span class="grayText">1e14</span><br>(Production to the hardcap ratio is <span id="preonCapRatio" class="grayText">0</span>)</p>
-                            <p id="dischargeEffect" class="orangeText">Boost from Discharge goals: <span class="darkorchidText">1</span></p>
+                            <p id="tritiumEffect" class="cyanText">Производство молекул от трития: <span class="blueText">0</span></p>
+                            <p id="preonCap" class="cyanText">Хардкап производства преонов начинается с <span class="grayText">1e14</span><br>(Отношение производства к хардкапу равно <span id="preonCapRatio" class="grayText">0</span>)</p>
+                            <p id="dischargeEffect" class="orangeText">Буст от целей разряжения: <span class="darkorchidText">1</span></p>
                             <p id="energySpent" class="orangeText">Missing Energy: <span class="darkorchidText">0</span></p>
                         </div>
                         <div class="stage2Only">
-                            <p id="molesProduction" class="blueText">Tritium production of Moles: <span class="cyanText">0</span></p>
-                            <p id="vaporizationBoostTotal" class="grayText">Total boost after Vaporization: <span class="blueText">1</span></p>
-                            <p id="cloudEffect" class="grayText">Boost to Puddles from Clouds: <span class="blueText">1</span></p>
+                            <p id="molesProduction" class="blueText">Производство молей от трития: <span class="cyanText">0</span></p>
+                            <p id="vaporizationBoostTotal" class="grayText">Общий буст от испарения: <span class="blueText">1</span></p>
+                            <p id="cloudEffect" class="grayText">Буст лужам от облаков: <span class="blueText">1</span></p>
                         </div>
                         <div class="stage3Only">
-                            <p id="massProduction" class="grayText">Preons production of Mass: <span class="cyanText">0</span></p>
-                            <p id="dustSoftcap" class="grayText">Cosmic dust production is raised to the power of <span class="darkorchidText">1</span></p>
-                            <p id="dustCap" class="grayText">Cosmic dust production hardcap starts at <span class="darkorchidText">1e48</span><br>(Production to the hardcap ratio is <span id="dustCapRatio" class="darkorchidText">0</span>)</p>
-                            <p id="submersionBoost" class="blueText">Boost to Cosmic dust from Drops: <span class="cyanText">0</span></p>
+                            <p id="massProduction" class="grayText">Производство массы от преонов: <span class="cyanText">0</span></p>
+                            <p id="dustSoftcap" class="grayText">Производство космической пыли возвышено в <span class="darkorchidText">1</span> раз</p>
+                            <p id="dustCap" class="grayText">Хардкап производства космической пыли начинается с <span class="darkorchidText">1e48</span><br>(Отношение производства к хардкапу равно <span id="dustCapRatio" class="darkorchidText">0</span>)</p>
+                            <p id="submersionBoost" class="blueText">Буст космической пыли от капель: <span class="cyanText">0</span></p>
                         </div>
                         <div class="stage4Only">
-                            <p id="mainCap" class="cyanText">Solar mass from Collapse is limited to <span class="orchidText">1</span><br>(Hardcap will be reached in <span class="orchidText"><span id="mainCapTill">20</span> seconds</span>)</p>
-                            <p id="collapseBoostTotal" class="orchidText">Total boost after Collapse: <span class="cyanText">1</span></p>
+                            <p id="mainCap" class="cyanText">Солнечная масса от коллапса лимитированна до <span class="orchidText">1</span><br>(Хардкап будет достигнут через <span class="orchidText"><span id="mainCapTill">20</span> секунд</span>)</p>
+                            <p id="collapseBoostTotal" class="orchidText">Общий буст от коллапса: <span class="cyanText">1</span></p>
                             <section id="starEffects">
-                                <h3 class="orangeText bigWord">Current effects</h3>
-                                <p id="solarMassEffect" class="cyanText">Solar mass: <span class="greenText">0</span><span class="info greenText">Boost to all Stars</span></p>
-                                <p id="star1Effect" class="redText">Red giants: <span class="greenText">0</span><span class="info greenText">Boost to Main-sequence</span></p>
-                                <p id="star2Effect" class="darkvioletText">Neutron stars: <span class="greenText">0</span><span class="info greenText">Boost to all Stars</span></p>
-                                <p id="star3Effect" class="grayText">Black holes: <span class="greenText">0</span><span class="info greenText">Boost to the Solar mass gain</span></p>
+                                <h3 class="orangeText bigWord">Текущие эффекты</h3>
+                                <p id="solarMassEffect" class="cyanText">Солнечная масса: <span class="greenText">0</span><span class="info greenText">Буст всем звёздам</span></p>
+                                <p id="star1Effect" class="redText">Красные гиганты: <span class="greenText">0</span><span class="info greenText">Буст главной последовательности</span></p>
+                                <p id="star2Effect" class="darkvioletText">Нейтронные звёзды: <span class="greenText">0</span><span class="info greenText">Буст всем звёздам</span></p>
+                                <p id="star3Effect" class="grayText">Чёрные дыры: <span class="greenText">0</span><span class="info greenText">Буст к заработку солнечной массы</span></p>
                             </section>
                         </div>
                         <div class="stage5Only">
-                            <p id="mainCapS5" class="cyanText">Solar mass after Collapse: <span class="orangeText">0</span><span id="mainCapHardS5"> | Hardcap: <span class="orangeText">0</span></span><span id="mainCapPostS5"> | Post: <span class="orangeText">0</span></span><span id="timeSinceGalaxy" class="grayText"><br>(Time since last Galaxy: <span class="orangeText">0 seconds</span>)</span></p>
-                            <p id="elementsProductionS5" class="redText">Total production of Stardust: <span class="orangeText">0</span></p>
-                            <p id="collapseBoostTotalS5" class="orchidText">Total boost after Collapse: <span class="orangeText">1</span></p>
-                            <p id="mergeBoostTotal" class="darkvioletText">Total boost after Merge: <span class="grayText">1</span> ^2</p>
+                            <p id="mainCapS5" class="cyanText">Солнечной массы после коллапса: <span class="orangeText">0</span><span id="mainCapHardS5"> | Хардкап: <span class="orangeText">0</span></span><span id="mainCapPostS5"> | После: <span class="orangeText">0</span></span><span id="timeSinceGalaxy" class="grayText"><br>(Время после последней галактики: <span class="orangeText">0 секунд</span>)</span></p>
+                            <p id="elementsProductionS5" class="redText">Общее производство звёздной пыли: <span class="orangeText">0</span></p>
+                            <p id="collapseBoostTotalS5" class="orchidText">Общий буст после коллапса: <span class="orangeText">1</span></p>
+                            <p id="mergeBoostTotal" class="darkvioletText">Общий буст после слияния: <span class="grayText">1</span> ^2</p>
                             <section id="mergeEffects">
-                                <h3 class="cyanText bigWord">Current effects | Requirements</h3>
-                                <p id="merge1Effect" class="grayText">Groups: <span class="greenText">1</span><span class="info greenText">Boost to Galaxies</span><span> | <span class="greenText">0</span> out of <span class="greenText">50</span> Galaxies</span></p>
-                                <p id="merge2Effect" class="grayText">Clusters: <span class="greenText">1</span><span class="info greenText">Max boost from bonus levels of 'Central dominant Galaxy'</span><span> | <span class="greenText">0</span> out of <span class="greenText">100</span> Galaxies</span></p>
+                                <h3 class="cyanText bigWord">Текущие эффекты | Требования</h3>
+                                <p id="merge1Effect" class="grayText">Группы: <span class="greenText">1</span><span class="info greenText">Буст галактикам</span><span> | <span class="greenText">0</span> от <span class="greenText">50</span> галактик</span></p>
+                                <p id="merge2Effect" class="grayText">Кластеры: <span class="greenText">1</span><span class="info greenText">Максимальный буст от бонусных уровенй 'Центральной доминантной галактики'</span><span> | <span class="greenText">0</span> от <span class="greenText">100</span> галактик</span></p>
                             </section>
                         </div>
                         <div class="stage6Only">
-                            <p id="mergeResetsS6" class="darkvioletText">Merge resets: <span>0</span> | <span class="greenText">1</span> Max</p>
-                            <section id="mergeScore" class="stage6borderImage" title="Merge score">
-                                <p id="mergeScore0" class="grayText"><span>Galaxies:</span> <span id="mergeScore0Cur" class="greenText">0</span> <span>(<span class="greenText">1</span> per)</span></p>
-                                <p id="mergeScore1" class="grayText"><span>Groups:</span> <span id="mergeScore1Cur" class="greenText">0</span> <span>(<span class="greenText">2</span> per)</span></p>
-                                <p id="mergeScore2" class="grayText"><span>Clusters:</span> <span id="mergeScore2Cur" class="greenText">0</span> <span>(<span class="greenText">0</span> per)</span></p>
-                                <p class="darkvioletText"><span>Score total:</span> <span id="mergeScoreTotal" class="greenText">0</span> <span>(<span id="mergeScoreAfter" class="greenText">0</span> post)</span></p>
+                            <p id="mergeResetsS6" class="darkvioletText">Сбросов слияния: <span>0</span> | <span class="greenText">1</span> Максимум</p>
+                            <section id="mergeScore" class="stage6borderImage" title="Счёт слияния">
+                                <p id="mergeScore0" class="grayText"><span>Галактик:</span> <span id="mergeScore0Cur" class="greenText">0</span> <span>(<span class="greenText">1</span> за каждый)</span></p>
+                                <p id="mergeScore1" class="grayText"><span>Групп:</span> <span id="mergeScore1Cur" class="greenText">0</span> <span>(<span class="greenText">2</span> за каждый)</span></p>
+                                <p id="mergeScore2" class="grayText"><span>Кластеров:</span> <span id="mergeScore2Cur" class="greenText">0</span> <span>(<span class="greenText">0</span> за каждый)</span></p>
+                                <p class="darkvioletText"><span>Общий счёт:</span> <span id="mergeScoreTotal" class="greenText">0</span> <span>(<span id="mergeScoreAfter" class="greenText">0</span> после)</span></p>
                             </section>
-                            <p class="darkvioletText">Inflatons gain on Vacuum resets: <span class="greenText" id="inflatonGainTrue">1</span> (<span class="greenText">true</span>) | <span class="redText" id="inflatonGainFalse">1</span> (<span class="redText">false</span>)</p>
-                            <p id="universeTime" class="grayText">Universe age: <span class="orangeText">0 seconds</span><span id="universeTimeReal"> (Real: <span class="orangeText">0 seconds</span>)</span></p>
+                            <p class="darkvioletText">Заработок инфлятонов за каждый сброс вакуума: <span class="greenText" id="inflatonGainTrue">1</span> (<span class="greenText">истинный</span>) | <span class="redText" id="inflatonGainFalse">1</span> (<span class="redText">ложный</span>)</p>
+                            <p id="universeTime" class="grayText">Возраст вселенной: <span class="orangeText">0 секунд</span><span id="universeTimeReal"> (Реальных: <span class="orangeText">0 секунд</span>)</span></p>
                         </div>
                     </div>
                     <div id="timeInfo">
-                        <p id="currentChallenge" class="redText">Currently inside the <span>Missing</span></p>
-                        <p id="gameDisabled" class="redText" style="display: none;">Game is disabled for <span class="greenText">0 seconds</span> due to time travel</p>
-                        <p id="gamePaused" class="redText" style="display: none;">Game is paused, unpause it by pausing again</p>
-                        <p id="exportMaxed" class="redText">Time for a reward from exporting save file is at max value</p>
-                        <p id="stageTime" class="blueText">Stage time: <span class="cyanText">1 seconds</span><span id="stageTimeReal"> (Real: <span class="cyanText">0 seconds</span>)</span></p>
-                        <p id="globalSpeed" class="blueText">Global speed multiplier: <span class="cyanText">1</span></p>
+                        <p id="currentChallenge" class="redText">Сейчас внутри <span>Missing</span></p>
+                        <p id="gameDisabled" class="redText" style="display: none;">Игра неактивна <span class="greenText">0 секунд</span> за путешествие во времени</p>
+                        <p id="gamePaused" class="redText" style="display: none;">Игра на паузе, возобновите её сделав паузу снова</p>
+                        <p id="exportMaxed" class="redText">Время за награду от экспорта сохранения сейчас на пределе</p>
+                        <p id="stageTime" class="blueText">Время этапа: <span class="cyanText">1 секунд</span><span id="stageTimeReal"> (Реальных: <span class="cyanText">0 секунд</span>)</span></p>
+                        <p id="globalSpeed" class="blueText">Множитель глобальной скорости: <span class="cyanText">1</span></p>
                     </div>
-                    <p id="SRMessage1" class="reader">If you are using Screen reader, then enabling support in Settings will add extra information and other helpful stuff. Current hotkeys to change tabs are <span>Arrows Left and Right</span>, and for subtabs are <span>Arrows Down and Up</span></p>
-                    <p id="MDMessage1" aria-hidden="true">If you are playing on Mobile device, then enabling support in Settings will add helpful stuff and can fix some bugs</p>
+                    <p id="SRMessage1" class="reader">Если вы используете читатель экранов, то активация поддержки в настройках даст вам полезную информацию. Текущие горячие клавиши для изменения вкладок - <span>стрелки влево и вправо</span>, для подвкладок - <span>стрелки вниз и вверх</span></p>
+                    <p id="MDMessage1" aria-hidden="true">Если вы играете на мобильном устройстве, то включение поддержки в настройках добавит полезных вещей и починит некоторые баги</p>
                 </section>
-                <section id="stageSubtabAdvanced" class="insideTab" style="display: none;" aria-label="Current tab">
+                <section id="stageSubtabAdvanced" class="insideTab" style="display: none;" aria-label="Текущая вкладка">
                     <div id="challengesMain">
                         <section aria-label="Challenges">
-                            <input type="image" src="Used_art/Void.png" alt="Void" draggable="false" id="challenge1" class="interactiveImage" aria-controls="challengeMultiline">
-                            <input type="image" src="Used_art/False%20vacuum.png" alt="Vacuum information" draggable="false" id="challenge2" class="interactiveImage" aria-controls="challengeMultiline">
+                            <input type="image" src="Used_art/Void.png" alt="Пустота" draggable="false" id="challenge1" class="interactiveImage" aria-controls="challengeMultiline">
+                            <input type="image" src="Used_art/False%20vacuum.png" alt="Информация вакуума" draggable="false" id="challenge2" class="interactiveImage" aria-controls="challengeMultiline">
                         </section>
                         <div>
                             <section>
-                                <h3 class="bigWord"><button type="button" id="challengeName" class="selectBtn"></button><span id="challengeActive" class="greenText">, active</span></h3>
+                                <h3 class="bigWord"><button type="button" id="challengeName" class="selectBtn"></button><span id="challengeActive" class="greenText">, активен</span></h3>
                                 <div id="challengeMultiline"></div>
                             </section>
                             <section id="voidRewards" aria-labelledby="rewardsType">
                                 <button type="button" id="rewardsType" class="selectBtn darkvioletText bigWord">Пустотные награды:</button>
                                 <div>
-                                    <button type="button" id="voidReward1" class="hollowButton stage1borderButton cyanText" aria-controls="voidRewardsMultiline">Microworld</button>
-                                    <button type="button" id="voidReward2" class="hollowButton stage2borderButton blueText" aria-controls="voidRewardsMultiline">Submerged</button>
-                                    <button type="button" id="voidReward3" class="hollowButton stage3borderButton grayText" aria-controls="voidRewardsMultiline">Accretion</button>
-                                    <button type="button" id="voidReward4" class="hollowButton stage4borderButton orangeText" aria-controls="voidRewardsMultiline">Interstellar</button>
-                                    <button type="button" id="voidReward5" class="hollowButton stage5borderButton darkorchidText" aria-controls="voidRewardsMultiline">Intergalactic</button>
+                                    <button type="button" id="voidReward1" class="hollowButton stage1borderButton cyanText" aria-controls="voidRewardsMultiline">Микромир</button>
+                                    <button type="button" id="voidReward2" class="hollowButton stage2borderButton blueText" aria-controls="voidRewardsMultiline">Погруженный</button>
+                                    <button type="button" id="voidReward3" class="hollowButton stage3borderButton grayText" aria-controls="voidRewardsMultiline">Аккреция</button>
+                                    <button type="button" id="voidReward4" class="hollowButton stage4borderButton orangeText" aria-controls="voidRewardsMultiline">Межзвёздный</button>
+                                    <button type="button" id="voidReward5" class="hollowButton stage5borderButton darkorchidText" aria-controls="voidRewardsMultiline">Межгалактический</button>
                                 </div>
                                 <div id="voidRewardsMultiline" class="whiteText challengeRewards"></div>
                             </section>
                             <section id="stabilityRewards">
-                                <h3 type="button" class="selectBtn darkorchidText bigWord">Completions rewards:</h3>
+                                <h3 type="button" class="selectBtn darkorchidText bigWord">Награды за завершения:</h3>
                                 <div id="stabilityRewardsMultiline" class="whiteText challengeRewards"></div>
                             </section>
                         </div>
                     </div>
                     <div id="challengesToggles" class="togglesDiv">
-                        <label class="whiteText">Автоматически покинуть челлендж по достижении его лимита времени <button type="button" id="toggleNormal3" class="toggleNormal">ON</button></label>
+                        <label class="whiteText">Автоматически покинуть челлендж по достижении его лимита времени <button type="button" id="toggleNormal3" class="toggleNormal">ВКЛ</button></label>
                     </div>
                 </section>
             </div>
             <div id="upgradeTab" style="display: none;">
-                <section id="upgradeSubtabUpgrades" class="insideTab" aria-label="Current tab">
+                <section id="upgradeSubtabUpgrades" class="insideTab" aria-label="Текущая вкладка">
                     <div id="upgrades">
                         <h2 id="upgradesHeader" class="biggerWord">Улучшения</h2>
                         <section aria-labelledby="upgradesHeader">
@@ -294,8 +294,8 @@
                     </div>
                     <div id="researches">
                         <h2 class="bigWord" aria-hidden="true">Исследования</h2>
-                        <section id="stageResearches" aria-label="Stage Researches">
-                            <img src="Used_art/Stage.png" alt="" title="Stage Researches" loading="lazy" draggable="false" class="stageBorderImage">
+                        <section id="stageResearches" aria-label="Исследования этапа">
+                            <img src="Used_art/Stage.png" alt="" title="Исследования этапа" loading="lazy" draggable="false" class="stageBorderImage">
                             <div class="researchesDiv stageAllborderImage">
                                 <div id="research1" class="whiteText">
                                     <input type="image" src="Used_art/Missing.png" alt="Missing" draggable="false" id="research1Image" class="interactiveImage" aria-controls="upgradeCost upgradeEffect">
@@ -335,8 +335,8 @@
                                 </div>
                             </div>
                         </section>
-                        <section id="extraResearches" aria-label="Special Researches">
-                            <img src="Used_art/Missing.png" alt="" title="Special Researches" loading="lazy" draggable="false">
+                        <section id="extraResearches" aria-label="Особые исследования">
+                            <img src="Used_art/Missing.png" alt="" title="Особые исследования" loading="lazy" draggable="false">
                             <div class="researchesDiv">
                                 <div id="researchExtra1" class="whiteText">
                                     <input type="image" src="Used_art/Missing.png" alt="Missing" draggable="false" id="researchExtra1Image" class="interactiveImage" aria-controls="upgradeCost upgradeEffect">
@@ -364,23 +364,23 @@
                                 </div>
                             </div>
                         </section>
-                        <section id="autoResearches" aria-label="Automatization Researches">
-                            <img src="Used_art/Automatization.png" alt="" title="Automatization Researches" loading="lazy" draggable="false">
+                        <section id="autoResearches" aria-label="Исследования автоматизации">
+                            <img src="Used_art/Automatization.png" alt="" title="Исследования автоматизации" loading="lazy" draggable="false">
                             <div class="researchesDiv stage3borderImage">
                                 <div id="ASR" class="whiteText stageAllborderImage">
-                                    <input type="image" src="Used_art/Auto.png" alt="Auto Structures" draggable="false" id="ASRImage" class="stageBorderImage interactiveImage" aria-controls="upgradeCost upgradeEffect">
+                                    <input type="image" src="Used_art/Auto.png" alt="Авто структуры" draggable="false" id="ASRImage" class="stageBorderImage interactiveImage" aria-controls="upgradeCost upgradeEffect">
                                     <p><span id="ASRLevel">0</span>/<span id="ASRMax" class="greenText">1</span></p>
                                 </div>
                                 <div id="researchAuto1" class="whiteText stage3borderImage">
-                                    <input type="image" src="Used_art/ResearchAuto1.png" alt="Upgrade automatization" draggable="false" id="researchAuto1Image" class="interactiveImage" aria-controls="upgradeCost upgradeEffect">
+                                    <input type="image" src="Used_art/ResearchAuto1.png" alt="Автоматизация улучшений" draggable="false" id="researchAuto1Image" class="interactiveImage" aria-controls="upgradeCost upgradeEffect">
                                     <p><span id="researchAuto1Level">0</span>/<span id="researchAuto1Max" class="greenText">1</span></p>
                                 </div>
                                 <div id="researchAuto2" class="whiteText stage4borderImage">
-                                    <input type="image" src="Used_art/ResearchAuto2.png" alt="Element automatization" draggable="false" id="researchAuto2Image" class="interactiveImage" aria-controls="upgradeCost upgradeEffect">
+                                    <input type="image" src="Used_art/ResearchAuto2.png" alt="Автоматизация элементов" draggable="false" id="researchAuto2Image" class="interactiveImage" aria-controls="upgradeCost upgradeEffect">
                                     <p><span id="researchAuto2Level">0</span>/<span id="researchAuto2Max" class="greenText">1</span></p>
                                 </div>
                                 <div id="researchAuto3" class="whiteText stageAllborderImage">
-                                    <input type="image" src="Used_art/ResearchAuto3.png" alt="Reset automatization" draggable="false" id="researchAuto3Image" class="stageBorderImage interactiveImage" aria-controls="upgradeCost upgradeEffect">
+                                    <input type="image" src="Used_art/ResearchAuto3.png" alt="Автоматизация сброса" draggable="false" id="researchAuto3Image" class="stageBorderImage interactiveImage" aria-controls="upgradeCost upgradeEffect">
                                     <p><span id="researchAuto3Level">0</span>/<span id="researchAuto3Max" class="greenText">1</span></p>
                                 </div>
                             </div>
@@ -388,8 +388,8 @@
                     </div>
                     <div class="descriptionTextMain">
                         <div id="researchToggles">
-                            <button type="button" id="toggleHover0" class="toggleHover">Hover to create ON</button>
-                            <button type="button" id="toggleMax0" class="toggleMax">Max create ON</button>
+                            <button type="button" id="toggleHover0" class="toggleHover">Навестись для создания ВКЛ</button>
+                            <button type="button" id="toggleMax0" class="toggleMax">Создания максимума ВКЛ</button>
                         </div>
                         <div class="descriptionText">
                             <h3>Тип: <span id="upgradeText">Наведись чтобы увидеть.</span></h3>
@@ -401,47 +401,47 @@
                 <section id="upgradeSubtabElements" class="insideTab" style="display: none;" aria-label="Current tab">
                     <h2 id="elementsHeader" class="orangeText biggerWord">Элементы</h2>
                     <section id="elementsGrid" aria-labelledby="elementsHeader">
-                        <input type="image" src="Used_art/Element0.png" alt="[0] Neutronium" draggable="false" id="element0" class="interactiveImage elementType1" aria-controls="elementCost elementEffect" aria-hidden="true" tabindex="-1">
-                        <input type="image" src="Used_art/Element1.png" alt="[1] Hydrogen" draggable="false" id="element1" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element2.png" alt="[2] Helium" draggable="false" id="element2" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element3.png" alt="[3] Lithium" draggable="false" id="element3" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element4.png" alt="[4] Beryllium" draggable="false" id="element4" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element5.png" alt="[5] Boron" draggable="false" id="element5" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element6.png" alt="[6] Carbon" draggable="false" id="element6" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element7.png" alt="[7] Nitrogen" draggable="false" id="element7" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element8.png" alt="[8] Oxygen" draggable="false" id="element8" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element9.png" alt="[9] Fluorine" draggable="false" id="element9" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element10.png" alt="[10] Neon" draggable="false" id="element10" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element11.png" alt="[11] Sodium" draggable="false" id="element11" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element12.png" alt="[12] Magnesium" draggable="false" id="element12" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element13.png" alt="[13] Aluminium" draggable="false" id="element13" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element14.png" alt="[14] Silicon" draggable="false" id="element14" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element15.png" alt="[15] Phosphorus" draggable="false" id="element15" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element16.png" alt="[16] Sulfur" draggable="false" id="element16" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element17.png" alt="[17] Chlorine" draggable="false" id="element17" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element18.png" alt="[18] Argon" draggable="false" id="element18" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element19.png" alt="[19] Potassium" draggable="false" id="element19" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element20.png" alt="[20] Calcium" draggable="false" id="element20" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element21.png" alt="[21] Scandium" draggable="false" id="element21" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element22.png" alt="[22] Titanium" draggable="false" id="element22" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element23.png" alt="[23] Vanadium" draggable="false" id="element23" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element24.png" alt="[24] Chromium" draggable="false" id="element24" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element25.png" alt="[25] Manganese" draggable="false" id="element25" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element26.png" alt="[26] Iron" draggable="false" id="element26" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element27.png" alt="[27] Cobalt" draggable="false" id="element27" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element28.png" alt="[28] Nickel" draggable="false" id="element28" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element29.png" alt="[29] Copper" draggable="false" id="element29" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element30.png" alt="[30] Zinc" draggable="false" id="element30" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element31.png" alt="[31] Gallium" draggable="false" id="element31" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element32.png" alt="[32] Germanium" draggable="false" id="element32" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element33.png" alt="[33] Arsenic" draggable="false" id="element33" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element34.png" alt="[34] Selenium" draggable="false" id="element34" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
-                        <input type="image" src="Used_art/Element35.png" alt="[35] Bromine" draggable="false" id="element35" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element0.png" alt="[0] Нейтроний" draggable="false" id="element0" class="interactiveImage elementType1" aria-controls="elementCost elementEffect" aria-hidden="true" tabindex="-1">
+                        <input type="image" src="Used_art/Element1.png" alt="[1] Водород" draggable="false" id="element1" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element2.png" alt="[2] Гелий" draggable="false" id="element2" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element3.png" alt="[3] Литий" draggable="false" id="element3" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element4.png" alt="[4] Берилий" draggable="false" id="element4" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element5.png" alt="[5] Бор" draggable="false" id="element5" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element6.png" alt="[6] Углерод" draggable="false" id="element6" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element7.png" alt="[7] Азот" draggable="false" id="element7" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element8.png" alt="[8] Кислород" draggable="false" id="element8" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element9.png" alt="[9] Фтор" draggable="false" id="element9" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element10.png" alt="[10] Неон" draggable="false" id="element10" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element11.png" alt="[11] Натрий" draggable="false" id="element11" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element12.png" alt="[12] Магний" draggable="false" id="element12" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element13.png" alt="[13] Аллюминий" draggable="false" id="element13" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element14.png" alt="[14] Кремний" draggable="false" id="element14" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element15.png" alt="[15] Фосфор" draggable="false" id="element15" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element16.png" alt="[16] Сера" draggable="false" id="element16" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element17.png" alt="[17] Хлор" draggable="false" id="element17" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element18.png" alt="[18] Аргон" draggable="false" id="element18" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element19.png" alt="[19] Калий" draggable="false" id="element19" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element20.png" alt="[20] Кальций" draggable="false" id="element20" class="interactiveImage elementType1" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element21.png" alt="[21] Скандий" draggable="false" id="element21" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element22.png" alt="[22] Титан" draggable="false" id="element22" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element23.png" alt="[23] Ванадий" draggable="false" id="element23" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element24.png" alt="[24] Хром" draggable="false" id="element24" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element25.png" alt="[25] Марганец" draggable="false" id="element25" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element26.png" alt="[26] Железо" draggable="false" id="element26" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element27.png" alt="[27] Кобальт" draggable="false" id="element27" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element28.png" alt="[28] Никель" draggable="false" id="element28" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element29.png" alt="[29] Медь" draggable="false" id="element29" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element30.png" alt="[30] Цинк" draggable="false" id="element30" class="interactiveImage elementType3" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element31.png" alt="[31] Галлий" draggable="false" id="element31" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element32.png" alt="[32] Германий" draggable="false" id="element32" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element33.png" alt="[33] Мышьяк" draggable="false" id="element33" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element34.png" alt="[34] Селен" draggable="false" id="element34" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
+                        <input type="image" src="Used_art/Element35.png" alt="[35] Бром" draggable="false" id="element35" class="interactiveImage elementType2" aria-controls="elementCost elementEffect">
                     </section>
                     <div class="descriptionText">
-                        <h3>Element: <span id="elementText">Hover to see.</span></h3>
-                        <p>Effect: <span id="elementEffect">Hover to see.</span></p>
-                        <p>Unlock: <span id="elementCost">Resource.</span></p>
+                        <h3>Элемент: <span id="elementText">Наведись чтобы увидеть.</span></h3>
+                        <p>Эффект: <span id="elementEffect">Наведись чтобы увидеть.</span></p>
+                        <p>Разблокирование: <span id="elementCost">Ресурс.</span></p>
                     </div>
                 </section>
             </div>
@@ -486,7 +486,7 @@
                             </div>
                         </section>
                     </article>
-                    <h2 id="strangenessHeader" class="greenText center"><span class="bigWord">Strangeness</span><span><br><button type="button" id="strangenessVisibility" class="selectBtn">Permanent ones are hidden</button></span></h2>
+                    <h2 id="strangenessHeader" class="greenText center"><span class="bigWord">Странность</span><span><br><button type="button" id="strangenessVisibility" class="selectBtn">Permanent ones are hidden</button></span></h2>
                     <article id="strangenessResearch" aria-labelledby="strangenessHeader">
                         <section id="strangenessSection1" class="researchesDiv stage1borderImage" aria-label="Microworld">
                             <div id="strange1Stage1" class="whiteText stage1borderImage">
@@ -994,22 +994,22 @@
                     </section>
                     <div class="options">
                         <section id="autoTogglesUpgrades">
-                            <h3>Other automatization</h3>
+                            <h3>Другая автоматизация</h3>
                             <div id="autoToggle8">
-                                <label for="toggleAuto8" class="whiteText">Elements <span class="mainText">⟶</span></label>
-                                <button type="button" id="toggleAuto8" class="toggleAuto">Auto OFF</button>
+                                <label for="toggleAuto8" class="whiteText">Элементы <span class="mainText">⟶</span></label>
+                                <button type="button" id="toggleAuto8" class="toggleAuto">Авто ВЫКЛ</button>
                             </div>
                             <div id="autoToggle5">
-                                <label for="toggleAuto5" class="whiteText">Upgrades <span class="mainText">⟶</span></label>
-                                <button type="button" id="toggleAuto5" class="toggleAuto">Auto OFF</button>
+                                <label for="toggleAuto5" class="whiteText">Улучшения <span class="mainText">⟶</span></label>
+                                <button type="button" id="toggleAuto5" class="toggleAuto">Авто ВЫКЛ</button>
                             </div>
                             <div id="autoToggle6">
-                                <label for="toggleAuto6" class="whiteText">Stage Researches <span class="mainText">⟶</span></label>
-                                <button type="button" id="toggleAuto6" class="toggleAuto">Auto OFF</button>
+                                <label for="toggleAuto6" class="whiteText">Исследования этапа <span class="mainText">⟶</span></label>
+                                <button type="button" id="toggleAuto6" class="toggleAuto">Авто ВЫКЛ</button>
                             </div>
                             <div id="autoToggle7">
-                                <label for="toggleAuto7" class="whiteText">Special Researches <span class="mainText">⟶</span></label>
-                                <button type="button" id="toggleAuto7" class="toggleAuto">Auto OFF</button>
+                                <label for="toggleAuto7" class="whiteText">Особые исследования <span class="mainText">⟶</span></label>
+                                <button type="button" id="toggleAuto7" class="toggleAuto">Авто ВЫКЛ</button>
                             </div>
                         </section>
                         <div id="themeArea">
