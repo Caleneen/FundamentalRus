@@ -19,8 +19,8 @@ export const prepareVacuum = (state: boolean) => { //Must not use direct player 
 
     if (state) {
         specialHTML.footerStatsHTML[1][0] = ['Energy%20mass.png', 'stage1borderImage cyanText', 'Mass'];
-        buildingsInfo.hoverText[2][0] = 'Tritium';
-        buildingsInfo.hoverText[3][0] = 'Preons hardcap';
+        buildingsInfo.hoverText[2][0] = 'Тритий';
+        buildingsInfo.hoverText[3][0] = 'Хардкап преонов';
         buildings[1][0].current.setValue('5.476e-3');
         buildings[2][0].current.setValue('0');
         buildings[3][0].current.setValue('9.76185667392e-36');
