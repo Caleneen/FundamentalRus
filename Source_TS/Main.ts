@@ -63,8 +63,8 @@ export const simulateOffline = async(offline: number) => {
 
     let decline = false;
     if (offline >= 20 && !player.toggles.normal[4]) {
-        decline = !await Confirm(`Claim ${format(Math.min(offline / 1000, 43200), { type: 'time', padding: false })} worth of Offline time?\n(Includes time spent to click any of the buttons)`, 2) &&
-            (globalSave.developerMode || !await Confirm("Press 'Cancel' again to confirm losing Offline time, 'Confirm' to keep it"));
+        decline = !await Confirm(`Получить ${format(Math.min(offline / 1000, 43200), { type: 'time', padding: false })} оффлайн времени?\n(Включает время сколько вы нажимали одну из кнопок)`, 2) &&
+            (globalSave.developerMode || !await Confirm("Нажмите 'Отмена' снова чтобы подтвердить потерю оффлайн времени, 'Подтвердить' чтобы оставить"));
         const extra = handleOfflineTime();
         global.lastSave += extra;
         offline += extra;
@@ -106,7 +106,7 @@ const calculateOffline = (warpTime: number) => {
         getId('offlineTick').textContent = format(rate);
         getId('offlineRemains').textContent = format(warpTime / 1000, { type: 'time' });
         getId('offlinePercentage').textContent = format(100 - warpTime / global.offline.start * 100, { padding: true });
-        if (globalSave.SRSettings[0]) { getQuery('#offlineMain > div').ariaValueText = `${format(100 - warpTime / global.offline.start * 100)}% done`; }
+        if (globalSave.SRSettings[0]) { getQuery('#offlineMain > div').ariaValueText = `${format(100 - warpTime / global.offline.start * 100)}% готово`; }
     } else {
         player.time.offline += warpTime;
         offlineEnd();
@@ -281,11 +281,11 @@ const awardExport = () => {
 };
 
 const saveConsole = async() => {
-    let value = await Prompt("Available options:\n'Copy' ‒ copy save file to the clipboard\n'Delete' ‒ delete your save file\n'Clear' ‒ clear all the domain data\n'Global' ‒ open options for global settings\n(Adding '_' will skip options menu)\nOr insert save file text here to load it");
+    let value = await Prompt("Доступные настройки:\n'Copy' ‒ копировать сохранение в буфер обмена\n'Delete' ‒ удалить сохранение\n'Clear' ‒ очистить данные домена\n'Global' ‒ открыть опции для глобальных настроек\n(Добавление '_' пропустит меню настроек)\nИли вставьте сюда сохранение для загрузки");
     if (value === null || value === '') { return; }
     let lower = value.trim().toLowerCase();
     if (lower === 'global') {
-        value = await Prompt("Available options:\n'Reset' ‒ reset global settings\n'Copy' ‒ copy global settings to the clipboard\nOr insert global settings text here to load it");
+        value = await Prompt("Доступные настройки:\n'Reset' ‒ сбросить глобальные настройки\n'Copy' ‒ копировать глобальные настройки в буфер обмена\nИли вставьте глобальные настройки чтобы загрузить их");
         if (value === null || value === '') { return; }
         lower = `global_${value.trim().toLowerCase()}`;
     }

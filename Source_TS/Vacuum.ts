@@ -34,8 +34,8 @@ export const prepareVacuum = (state: boolean) => { //Must not use direct player 
             buildingsInfo.hoverText[1].unshift('Mass', 'Preons');
         }
         buildingsInfo.startCost[1] = [0, 0.005476, 6, 3, 24, 3];
-        buildingsInfo.type[2][0] = 'improving';
-        buildingsInfo.type[3][0] = 'delaying';
+        buildingsInfo.type[2][0] = 'улучшает';
+        buildingsInfo.type[3][0] = 'медлит';
 
         upgrades1Cost = [40, 60, 100, 120, 180, 360, 1200, 3600, 12000, 80000];
         (upgradesInfo[2].startCost[0] as Overlimit).setValue('10');
@@ -140,8 +140,8 @@ export const prepareVacuum = (state: boolean) => { //Must not use direct player 
         buildingsInfo.maxActive[3] = 5;
         buildingsInfo.maxActive[4] = 5;
         buildingsInfo.startCost[1] = [0, 3, 24, 3];
-        buildingsInfo.type[2][0] = 'producing';
-        buildingsInfo.type[3][0] = 'producing';
+        buildingsInfo.type[2][0] = 'создаёт';
+        buildingsInfo.type[3][0] = 'создаёт';
         global.buildingsInfo.producing[4][5].setValue('0');
         getQuery('#star3Effect > span.info').textContent = 'Boost to the Solar mass gain';
 

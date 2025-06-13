@@ -313,7 +313,7 @@ export interface globalType {
         maxActive: number[]
         name: string[][]
         hoverText: string[][]
-        type: Array<Array<'producing' | 'improving' | 'delaying'>>
+        type: Array<Array<'создаёт' | 'улучшает' | 'медлит'>>
         startCost: number[][]
         increase: number[][]
         producing: Overlimit[][]

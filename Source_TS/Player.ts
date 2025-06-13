@@ -457,12 +457,12 @@ export const global: globalType = {
         ],
         type: [
             [],
-            ['producing', 'producing', 'producing', 'producing', 'producing'],
-            ['producing', 'producing', 'improving', 'improving', 'improving', 'improving'],
-            ['producing', 'producing', 'producing', 'improving', 'improving'],
-            ['producing', 'producing', 'producing', 'producing', 'producing'],
-            ['producing', 'improving', 'improving'],
-            ['producing']
+            ['создаёт', 'создаёт', 'создаёт', 'создаёт', 'создаёт'],
+            ['создаёт', 'создаёт', 'улучшает', 'улучшает', 'улучшает', 'улучшает'],
+            ['создаёт', 'создаёт', 'создаёт', 'улучшает', 'улучшает'],
+            ['создаёт', 'создаёт', 'создаёт', 'создаёт', 'создаёт'],
+            ['создаёт', 'улучшает', 'улучшает'],
+            ['создаёт']
         ],
         startCost: [
             [],

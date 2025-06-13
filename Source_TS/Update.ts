@@ -178,7 +178,7 @@ export const numbersUpdate = () => {
             for (let i = 1; i < buildingsInfo.maxActive[active]; i++) {
                 const trueCountID = getId(`building${i}True`);
                 getId(`building${i}Cur`).textContent = format(buildings[i].current, { padding: trueCountID.style.display !== 'none' });
-                getId(`building${i}Prod`).textContent = format(buildingsInfo.type[active][i - 1] === 'producing' ? new Overlimit(producing[i]).multiply(speed) : producing[i], { padding: true });
+                getId(`building${i}Prod`).textContent = format(buildingsInfo.type[active][i - 1] === 'создаёт' ? new Overlimit(producing[i]).multiply(speed) : producing[i], { padding: true });
                 trueCountID.textContent = `[${format(buildings[i as 1].true, { padding: 'exponent' })}]`;
 
                 let lockText;
