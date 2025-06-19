@@ -63,7 +63,7 @@ export const simulateOffline = async(offline: number) => {
 
     let decline = false;
     if (offline >= 20 && !player.toggles.normal[4]) {
-        decline = !await Confirm(`Получить ${format(Math.min(offline / 1000, 43200), { type: 'time', padding: false })} оффлайн времени?\n(Включает время сколько вы нажимали одну из кнопок)`, 2) &&
+        decline = !await Confirm(`Получить ${format(Math.min(offline / 1000, 43200), { type: 'time', padding: false })} оффлайн времени?\n(Учитывая время пока вы не кликнули по одной из кнопок)`, 2) &&
             (globalSave.developerMode || !await Confirm("Нажмите 'Отмена' снова чтобы подтвердить потерю оффлайн времени, 'Подтвердить' чтобы оставить"));
         const extra = handleOfflineTime();
         global.lastSave += extra;
