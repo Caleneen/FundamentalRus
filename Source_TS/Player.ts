@@ -587,39 +587,39 @@ export const global: globalType = {
             maxActive: 13
         }, { //Stage 4
             name: [
-                'Gravitational Collapse',
-                'Proton-proton chain',
-                'Carbon-Nitrogen-Oxygen cycle',
-                'Helium fusion',
-                'Nucleosynthesis'
+                'Гравитационный коллапс',
+                'Протон-протонный цикл',
+                'CNO цикл',
+                'Гелиевый синтез',
+                'Нуклеосинтез'
             ],
             effectText: [
-                () => `As fuel runs out, every Star will boost production in its own special way.\nSolar mass ${player.inflation.vacuum ? `on Collapse is Accretion Mass / ${format(1.98847e33)} and ` : ''}will not decrease if to reset below current. (Hover over Remnants effects to see what they boost)`,
-                () => "Fuse with Protium instead of Deuterium. Unlock 5 first Elements. ('Elements' subtab)",
-                () => 'Unlock the CNO cycle, which is a better source of Helium and Energy. Unlock 5 more Elements.',
-                () => 'Through Triple-alpha and then Alpha process unlock 2 more Elements.',
-                () => `Create new Atomic nuclei with Neutron capture (s-process and p-process).\nUnlock ${player.buildings[6][1].true + 1} more Element${player.stage.true >= 7 ? 's (+1 for every self-made Universe)' : ''}.`
+                () => `Пока топливо иссякает, каждая звезда забустит производство по своему.\nСолнечная масса ${player.inflation.vacuum ? `при коллапсе аккреционная масса / ${format(1.98847e33)} и ` : ''}не уменьшится если сбросится ниже текущей. (Наведись на эффекты остатков чтобы увидеть что они делают)`,
+                () => "Сливаться с протием а не с дейтерием. Разблокирует первые 5 элементов. (Подвкладка 'Элементы')",
+                () => 'Разблокирует CNO цикл, что является лучшим источником гелия и энергии. Разблокирует ещё 5 элементов.',
+                () => 'Через тройную гелиевую реакцию и затем альфа-процесс разблокирует ещё 2 элемента.',
+                () => `Создаёт новые атомные ядра с нейтронным захватом (s-процесс и p-процесс).\nРазблокирует ещё ${player.buildings[6][1].true + 1} элемент${player.stage.true >= 7 ? 'а (+1 за каждую купленную вселенную)' : ''}.`
             ],
             startCost: [100, 1000, 1e9, 1e48, 1e128],
             maxActive: 4
         }, { //Stage 5
             name: [
-                'Molecular cloud',
-                'Super Star cluster',
-                'Quasar',
-                'Galactic Merger',
-                'Starburst region',
-                'Globular cluster',
-                'Starburst Galaxy'
+                'Молекулярное облако',
+                'Звёздное сверхскопление',
+                'Квазар',
+                'Слияние галактик',
+                'Звёздообразование',
+                'Шаровое звёздное скопление',
+                'Звёздообразовательная галактика'
             ],
             effectText: [
-                () => `Nebula that is dense enough to block the light, it will boost Nebulas by ${format(calculateEffects.S5Upgrade0())}.`,
-                () => `A very massive Star cluster that will boost Star clusters by ${format(calculateEffects.S5Upgrade1())}.`,
-                () => `Boost per Galaxy will be increased by +${format(calculateEffects.S5Upgrade2(false, 1), { padding: true })}.\n(Effect will be stronger with more Solar mass past ${format(1e5)})`,
-                () => `Unlock a new reset type that will bring Galaxies closer for potential Merging.${player.inflation.vacuum ? ' That reset behaves like a Galaxy reset, while also converting self-made Galaxies into bonus ones. Can only be done a limited amount of times per Stage reset.' : ''}`,
-                () => `Region of space that is undergoing a larger amount of Star formations, it will boost Nebulas by ${format(1000 * 10 ** player.researches[5][4])}.`,
-                () => `A spheroidal conglomeration of Stars that is even more dense than Super Star cluster, it will boost Star clusters by ${format(1000 * 10 ** player.researches[5][4])}.`,
-                () => `An entire Galaxy that is undergoing higher rate of Star formations, it will boost Galaxies by ${format(100 * 10 ** player.researches[5][4])}.`
+                () => `Туманность настолько плотная, что блокирует свет, бустит туманности в ${format(calculateEffects.S5Upgrade0())} раз.`,
+                () => `Очень массивное скопление звёзд что улучшает их скопления в ${format(calculateEffects.S5Upgrade1())} раз.`,
+                () => `Буст галактик увеличится на +${format(calculateEffects.S5Upgrade2(false, 1), { padding: true })}.\n(Эффект будет больше при звёздной массе выше ${format(1e5)})`,
+                () => `Разблокирует тип сброса что притягивает галактики достаточно сильно для их потенциального слияния.${player.inflation.vacuum ? ' Этот сброс похож на галактический, также конвертирует купленные галактики в бонусные. Можно совершить только несколько раз за один сброс.' : ''}`,
+                () => `Космический регион, в котором активно рождаются звёзды, бустит туманности на ${format(1000 * 10 ** player.researches[5][4])}.`,
+                () => `Сфероидальное скопление звёзд что плотнее супер скопления звёзд, забустит скопления звёзд на ${format(1000 * 10 ** player.researches[5][4])}.`,
+                () => `Целая галактика где активно рождаются звёзды, бустит галактики на ${format(100 * 10 ** player.researches[5][4])}.`
             ],
             startCost: [1e56, 1e60, 1e120, 1e160, 1e200, 1e210, 1e290] as unknown as Overlimit[],
             maxActive: 4
