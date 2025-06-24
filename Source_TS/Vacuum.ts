@@ -124,7 +124,7 @@ export const prepareVacuum = (state: boolean) => { //Must not use direct player 
         getId('strange1Effect1Disabled').style.display = 'none';
         getId('stageAutoElse').style.display = 'none';
     } else {
-        specialHTML.footerStatsHTML[1][0] = ['Quarks.png', 'stage1borderImage cyanText', 'Quarks'];
+        specialHTML.footerStatsHTML[1][0] = ['Quarks.png', 'stage1borderImage cyanText', 'Кварки'];
         buildingsInfo.hoverText[2][0] = 'Moles';
         buildingsInfo.hoverText[3][0] = 'Mass';
         buildings[1][0].current.setValue('3');

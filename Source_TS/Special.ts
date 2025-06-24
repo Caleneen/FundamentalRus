@@ -95,11 +95,11 @@ export const toggleSpecial = (number: number, type: 'global' | 'mobile' | 'reade
     if (!toggles[number]) {
         toggleHTML.style.color = '';
         toggleHTML.style.borderColor = '';
-        toggleHTML.textContent = 'OFF';
+        toggleHTML.textContent = 'ВЫК';
     } else {
         toggleHTML.style.color = 'var(--red-text)';
         toggleHTML.style.borderColor = 'crimson';
-        toggleHTML.textContent = 'ON';
+        toggleHTML.textContent = 'ВКЛ';
     }
 };
 
@@ -266,24 +266,24 @@ export const specialHTML = { //Images here are from true vacuum for easier cache
     /** [src, className, textcontent] */
     footerStatsHTML: [
         [], [
-            ['Energy%20mass.png', 'stage1borderImage cyanText', 'Mass'],
-            ['Energy.png', 'stage4borderImage orangeText', 'Energy']
+            ['Energy%20mass.png', 'stage1borderImage cyanText', 'Масса'],
+            ['Energy.png', 'stage4borderImage orangeText', 'Энергия']
         ], [
-            ['Water.png', 'stage2borderImage blueText', 'Moles'],
-            ['Drop.png', 'stage2borderImage blueText', 'Drops'],
-            ['Clouds.png', 'stage3borderImage grayText', 'Clouds']
+            ['Water.png', 'stage2borderImage blueText', 'Моли'],
+            ['Drop.png', 'stage2borderImage blueText', 'Капли'],
+            ['Clouds.png', 'stage3borderImage grayText', 'Облака']
         ], [
-            ['Mass.png', 'stage3borderImage grayText', 'Mass']
+            ['Mass.png', 'stage3borderImage grayText', 'Масса']
         ], [
-            ['Elements.png', 'stage4borderImage orangeText', 'Stardust'],
-            ['Main_sequence%20mass.png', 'stage1borderImage cyanText', 'Mass']
+            ['Elements.png', 'stage4borderImage orangeText', 'Звёздная пыль'],
+            ['Main_sequence%20mass.png', 'stage1borderImage cyanText', 'Масса']
         ], [
-            ['Elements.png', 'stage4borderImage orangeText', 'Stardust'],
-            ['Main_sequence%20mass.png', 'stage1borderImage cyanText', 'Mass'],
-            ['Stars.png', 'redBorderImage redText', 'Stars']
+            ['Elements.png', 'stage4borderImage orangeText', 'Звёздная пыль'],
+            ['Main_sequence%20mass.png', 'stage1borderImage cyanText', 'Масса'],
+            ['Stars.png', 'redBorderImage redText', 'Звёзды']
         ], [
-            ['Dark%20matter.png', 'stage3borderImage grayText', 'Matter'],
-            ['Inflaton.png', 'stage6borderImage darkvioletText', 'Inflatons']
+            ['Dark%20matter.png', 'stage3borderImage grayText', 'Материя'],
+            ['Inflaton.png', 'stage6borderImage darkvioletText', 'Инфляции']
         ]
     ],
     mobileDevice: { //All browsers that I tested didn't properly detected more than 1 touch

@@ -2012,11 +2012,11 @@ export const toggleSwap = (number: number, type: 'buildings' | 'normal' | 'hover
     if (!toggles[number]) {
         toggleHTML.style.color = 'var(--red-text)';
         toggleHTML.style.borderColor = 'crimson';
-        toggleHTML.textContent = `${extraText}OFF`;
+        toggleHTML.textContent = `${extraText}ВЫК`;
     } else {
         toggleHTML.style.color = '';
         toggleHTML.style.borderColor = '';
-        toggleHTML.textContent = `${extraText}ON`;
+        toggleHTML.textContent = `${extraText}ВКЛ`;
     }
 };
 

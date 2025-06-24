@@ -246,12 +246,12 @@ export const numbersUpdate = () => {
                 }
 
                 getId(`building${i}`).classList[cost.lessOrEqual(currency) ? 'add' : 'remove']('availableBuilding');
-                getId(`building${i}Btn`).textContent = `Need: ${format(cost, { padding: true })} ${costName}`;
+                getId(`building${i}Btn`).textContent = `Нужно: ${format(cost, { padding: true })} ${costName}`;
                 getId(`building${i}BuyX`).textContent = format(buy, { padding: 'exponent' });
             }
             if (active === 1) {
                 const { dischargeInfo } = global;
-                getId('reset1Button').textContent = `Next goal is ${format(calculateEffects.dischargeCost(), { padding: true })} Energy`;
+                getId('reset1Button').textContent = `Цель - ${format(calculateEffects.dischargeCost(), { padding: true })} Энергии`;
                 getQuery('#tritiumEffect > span').textContent = format(new Overlimit(effectsCache.tritium).multiply(speed), { padding: true });
                 getQuery('#dischargeEffect > span').textContent = format(dischargeInfo.base ** dischargeInfo.total, { padding: true });
                 getQuery('#energySpent > span').textContent = format(dischargeInfo.energyTrue - player.discharge.energy, { padding: 'exponent' });
@@ -1205,8 +1205,8 @@ export const visualTrueStageUnlocks = () => {
 export const getUpgradeDescription = (index: number | null, type: 'upgrades' | 'researches' | 'researchesExtra' | 'researchesAuto' | 'ASR' | 'elements') => {
     if (type === 'elements') {
         if (index === null) {
-            getId('elementText').textContent = 'Hover to see.';
-            getId('elementEffect').textContent = 'Hover to see.';
+            getId('elementText').textContent = 'Наведись чтоб увидеть.';
+            getId('elementEffect').textContent = 'Наведись чтоб увидеть.';
             getId('elementCost').textContent = 'Stardust.';
             return;
         }
@@ -1222,8 +1222,8 @@ export const getUpgradeDescription = (index: number | null, type: 'upgrades' | '
 
     const stageIndex = player.stage.active;
     if (index === null) {
-        getId('upgradeText').textContent = 'Hover to see.';
-        getId('upgradeEffect').textContent = 'Hover to see.';
+        getId('upgradeText').textContent = 'Наведись чтоб увидеть.';
+        getId('upgradeEffect').textContent = 'Наведись чтоб увидеть.';
         getId('upgradeCost').textContent = `${global.stageInfo.costName[stageIndex]}.`;
         return;
     }
@@ -1317,8 +1317,8 @@ export const getUpgradeDescription = (index: number | null, type: 'upgrades' | '
 export const getStrangenessDescription = (index: number | null, stageIndex: number, type: 'strangeness' | 'milestones' | 'inflations') => {
     if (type === 'inflations') {
         if (index === null) {
-            getId('inflationText').textContent = 'Hover to see.';
-            getId('inflationEffect').textContent = 'Hover to see.';
+            getId('inflationText').textContent = 'Наведись чтоб увидеть.';
+            getId('inflationEffect').textContent = 'Наведись чтоб увидеть.';
             getId('inflationCost').textContent = 'Inflatons.';
             return;
         }
@@ -1338,8 +1338,8 @@ export const getStrangenessDescription = (index: number | null, stageIndex: numb
     } else { stageText.textContent = ''; }
     if (type === 'strangeness') {
         if (index === null) {
-            getId('strangenessText').textContent = 'Hover to see.';
-            getId('strangenessEffect').textContent = 'Hover to see.';
+            getId('strangenessText').textContent = 'Наведись чтоб увидеть.';
+            getId('strangenessEffect').textContent = 'Наведись чтоб увидеть.';
             getId('strangenessCost').textContent = 'Strange quarks.';
             return;
         }
@@ -1354,10 +1354,10 @@ export const getStrangenessDescription = (index: number | null, stageIndex: numb
     } else {
         let text;
         if (index === null) {
-            getId('milestonesText').textContent = 'Hover to see.';
-            text = `<p class="orchidText">Requirement: <span class="greenText">Hover to see.</span></p>
-            <p class="blueText">Time limit: <span class="greenText">Hover to see.</span></p>
-            <p class="darkvioletText">${player.inflation.vacuum ? 'Effect' : 'Unlock'}: <span class="greenText">Hover to see.</span></p>`;
+            getId('milestonesText').textContent = 'Наведись чтоб увидеть.';
+            text = `<p class="orchidText">Requirement: <span class="greenText">Наведись чтоб увидеть.</span></p>
+            <p class="blueText">Time limit: <span class="greenText">Наведись чтоб увидеть.</span></p>
+            <p class="darkvioletText">${player.inflation.vacuum ? 'Effect' : 'Unlock'}: <span class="greenText">Наведись чтоб увидеть.</span></p>`;
         } else {
             const pointer = global.milestonesInfo[stageIndex];
             const level = player.milestones[stageIndex][index];
@@ -1746,36 +1746,36 @@ export const format = (input: number | Overlimit, settings = {} as { type?: 'num
     } else if (type === 'time') { //12 Minutes 34 Seconds
         const inputAbs = Math.abs(input);
         if (inputAbs < 60) {
-            extra = 'seconds';
+            extra = 'секунд';
         } else if (inputAbs < 3600) {
             const minutes = Math.trunc(input / 60);
             const seconds = Math.trunc(input - minutes * 60);
-            if (padding === false && seconds === 0) { return `${minutes} minutes`; }
-            return `${minutes} minutes ${seconds} seconds`;
+            if (padding === false && seconds === 0) { return `${minutes} минут(ы)`; }
+            return `${minutes} минут(ы) ${seconds} секунд`;
         } else if (inputAbs < 86400) {
             const hours = Math.trunc(input / 3600);
             const minutes = Math.trunc(input / 60 - hours * 60);
-            if (padding === false && minutes === 0) { return `${hours} hours`; }
-            return `${hours} hours ${minutes} minutes`;
+            if (padding === false && minutes === 0) { return `${hours} часов`; }
+            return `${hours} часов ${minutes} минут(ы)`;
         } else if (inputAbs < 31556952) {
             const days = Math.trunc(input / 86400);
             const hours = Math.trunc(input / 3600 - days * 24);
-            if (padding === false && hours === 0) { return `${days} days`; }
-            return `${days} days ${hours} hours`;
+            if (padding === false && hours === 0) { return `${days} дней`; }
+            return `${days} дней ${hours} часов`;
         } else if (inputAbs < 3.1556952e10) {
             const years = Math.trunc(input / 31556952);
             const days = Math.trunc(input / 86400 - years * 365.2425);
-            if (padding === false && days === 0) { return `${years} years`; }
-            return `${years} years ${days} days`;
+            if (padding === false && days === 0) { return `${years} лет`; }
+            return `${years} лет ${days} дней`;
         } else if (inputAbs < 3.1556952e13) {
             input /= 3.1556952e10;
-            extra = 'millenniums';
+            extra = 'тысяч лет';
         } else if (inputAbs < 3.1556952e16) {
             input /= 3.1556952e13;
-            extra = 'megaannums';
+            extra = 'миллионов лет';
         } else {
             input /= 3.1556952e16;
-            extra = 'eons';
+            extra = 'миллиардов лет';
         }
 
         if (padding === undefined) { padding = true; }
@@ -1901,7 +1901,7 @@ export const stageUpdate = (changed = true, ignoreOffline = false) => {
         numbersUpdate();
         return;
     }
-    const extraText = `${['Energy', 'Clouds', 'Rank', 'Collapse', 'Galaxy', ''][active - 1]} Researches (Special)`;
+    const extraText = `${['Энергия', 'Облака', 'Ранг', 'Коллапс', 'Галактика', ''][active - 1]} Исследования (особые)`;
     if (globalSave.MDSettings[0]) {
         getId('reset1Footer').textContent = specialHTML.resetHTML[active];
     }
