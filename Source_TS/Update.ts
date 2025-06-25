@@ -1710,13 +1710,13 @@ const updateLog = () => {
 // Не я писал этот код, ИИ написал. Если что-то не так - чините сами, но вроде работает
 // Функция для склонения существительных
 function pluralize(value: number, forms: string[]): string {
-    if (!forms || forms.length < 3) return '';
+    if (forms.length < 3) { return ''; }
     const abs = Math.abs(value) % 100;
     const remainder = abs % 10;
 
-    if (abs > 10 && abs < 20) return forms[2];
-    if (remainder === 1) return forms[0];
-    if (remainder >= 2 && remainder <= 4) return forms[1];
+    if (abs > 10 && abs < 20) { return forms[2]; }
+    if (remainder === 1) { return forms[0]; }
+    if (remainder >= 2 && remainder <= 4) { return forms[1]; }
     return forms[2];
 }
 
@@ -1727,7 +1727,7 @@ export const format = (input: number | Overlimit, settings = {} as { type?: 'num
     let padding = settings.padding;
 
     let extra;
-    if (type === 'income') {  //1.2345e6 per second
+    if (type === 'income') { //1.2345e6 per second
         const inputAbs = Math.abs(input);
         if (inputAbs >= 1) {
             extra = 'в секунду';
@@ -1754,20 +1754,15 @@ export const format = (input: number | Overlimit, settings = {} as { type?: 'num
             extra = 'в миллиардолетие';
         }
 
-
         if (padding === undefined) { padding = true; }
     } else if (type === 'time') {
         if (padding === undefined) { padding = true; }
-
         const inputAbs = Math.abs(input);
         const value = Number(input);
 
-        // Секунды
         if (inputAbs < 60) {
             return `${Math.trunc(value)} ${pluralize(value, ['секунда', 'секунды', 'секунд'])}`;
-        }
-        // Минуты + секунды
-        else if (inputAbs < 3600) {
+        } else if (inputAbs < 3600) { // Минуты + секунды
             const minutes = Math.trunc(value / 60);
             const seconds = Math.trunc(value % 60);
 
@@ -1775,10 +1770,8 @@ export const format = (input: number | Overlimit, settings = {} as { type?: 'num
                 return `${minutes} ${pluralize(minutes, ['минута', 'минуты', 'минут'])}`;
             }
             return `${minutes} ${pluralize(minutes, ['минута', 'минуты', 'минут'])} ` +
-                   `${Math.abs(seconds)} ${pluralize(seconds, ['секунда', 'секунды', 'секунд'])}`;
-        }
-        // Часы + минуты
-        else if (inputAbs < 86400) {
+               `${Math.abs(seconds)} ${pluralize(seconds, ['секунда', 'секунды', 'секунд'])}`;
+        } else if (inputAbs < 86400) { // Часы + минуты
             const hours = Math.trunc(value / 3600);
             const minutes = Math.trunc((value % 3600) / 60);
 
@@ -1786,10 +1779,8 @@ export const format = (input: number | Overlimit, settings = {} as { type?: 'num
                 return `${hours} ${pluralize(hours, ['час', 'часа', 'часов'])}`;
             }
             return `${hours} ${pluralize(hours, ['час', 'часа', 'часов'])} ` +
-                   `${Math.abs(minutes)} ${pluralize(minutes, ['минута', 'минуты', 'минут'])}`;
-        }
-        // Дни + часы
-        else if (inputAbs < 31556952) {
+               `${Math.abs(minutes)} ${pluralize(minutes, ['минута', 'минуты', 'минут'])}`;
+        } else if (inputAbs < 31556952) { // Дни + часы
             const days = Math.trunc(value / 86400);
             const hours = Math.trunc((value % 86400) / 3600);
 
@@ -1797,23 +1788,19 @@ export const format = (input: number | Overlimit, settings = {} as { type?: 'num
                 return `${days} ${pluralize(days, ['день', 'дня', 'дней'])}`;
             }
             return `${days} ${pluralize(days, ['день', 'дня', 'дней'])} ` +
-                   `${Math.abs(hours)} ${pluralize(hours, ['час', 'часа', 'часов'])}`;
-        }
-        // Годы + дни
-        else if (inputAbs < 3.1556952e10) {
+               `${Math.abs(hours)} ${pluralize(hours, ['час', 'часа', 'часов'])}`;
+        } else if (inputAbs < 3.1556952e10) { // Годы + дни
             const years = Math.trunc(value / 31556952);
             const days = Math.trunc((value % 31556952) / 86400);
-            
+
             if (padding === false && days === 0) {
                 return `${years} ${pluralize(years, ['год', 'года', 'лет'])}`;
             }
             return `${years} ${pluralize(years, ['год', 'года', 'лет'])} ` +
-                   `${Math.abs(days)} ${pluralize(days, ['день', 'дня', 'дней'])}`;
-        } 
-        // Большие периоды (тыс./млн./млрд./трлн. лет)
-        else {
+               `${Math.abs(days)} ${pluralize(days, ['день', 'дня', 'дней'])}`;
+        } else { // Большие периоды
             let scaled, unit;
-            
+
             if (inputAbs < 3.1556952e13) {
                 scaled = value / 3.1556952e10;
                 unit = ['тысяча', 'тысячи', 'тысяч'];
@@ -1829,19 +1816,22 @@ export const format = (input: number | Overlimit, settings = {} as { type?: 'num
             }
 
             // Форматирование дробных чисел
-            let formatted = scaled;
-            if (Math.abs(scaled) > 100) formatted = Number(scaled.toFixed(1));
-            else if (Math.abs(scaled) > 10) formatted = Number(scaled.toFixed(2));
-            else formatted = Number(scaled.toFixed(3));
+            let formatted;
+            const absScaled = Math.abs(scaled);
+            if (absScaled > 100) {
+                formatted = Number(scaled.toFixed(1));
+            } else if (absScaled > 10) {
+                formatted = Number(scaled.toFixed(2));
+            } else {
+                formatted = Number(scaled.toFixed(3));
+            }
 
-            // Определение формы слова
-            const isInteger = Math.floor(scaled) === scaled;
-            const unitWord = isInteger
-                ? pluralize(scaled, unit)
-                : pluralize(Math.floor(Math.abs(scaled)), unit);
+            // Исправленное определение формы слова
+            const integerPart = Math.floor(absScaled);
+            const unitWord = pluralize(integerPart, unit);
+
             return `${formatted} ${unitWord} лет`;
         }
-
     }
     if (!isFinite(input)) { return extra !== undefined ? `${input} ${extra}` : `${input}`; }
 

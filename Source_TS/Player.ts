@@ -972,7 +972,7 @@ export const global: globalType = {
                     }
                 }
             }
-            return `Автоматически покупает ${unlocked ? global.buildingsInfo.name[stageIndex][index] : '(Не открыто)'} (считается за купленные).\n(Авто ${(stageIndex === 5 && index === 3) || stageIndex >= 6 ? "для этой структуры не ждёт и игнорирует настройки" : `будет ждать до ${format(player.toggles.shop.wait[stageIndex])}x  стоимости структуры`})`;
+            return `Автоматически покупает ${unlocked ? global.buildingsInfo.name[stageIndex][index] : '(Не открыто)'} (считается за купленные).\n(Авто ${(stageIndex === 5 && index === 3) || stageIndex >= 6 ? 'для этой структуры не ждёт и игнорирует настройки' : `будет ждать до ${format(player.toggles.shop.wait[stageIndex])}x  стоимости структуры`})`;
         },
         costRange: [
             [],
