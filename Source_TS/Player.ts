@@ -633,23 +633,23 @@ export const global: globalType = {
     researchesInfo: [
         {} as globalType['researchesInfo'][0], { //Stage 1
             name: [
-                'Stronger Protium',
-                'Better Deuterium',
-                'Improved Tritium',
-                'Requirement decrease',
-                'Discharge improvement',
-                'Radioactive Discharge'
+                'Протий посильнее',
+                'Дейтерий получше',
+                'Улучшенный тритий',
+                'Понижение требований',
+                'Улучшения разряжения',
+                'Радиоактивное разряжение'
             ],
             effectText: [
-                () => `Cost scaling will be -${format(0.03)} smaller with every level.`,
-                () => `Self-made Structures will boost each other by an additional +${format(0.01)}.`,
-                () => `Molecules will produce themselves ${format(calculateEffects.S1Research2())} times quicker.`,
-                () => `Discharge goals requirement will scale slower. (-2)\n(Creating this Research will make the next Discharge goal to be ${format(calculateEffects.dischargeCost(calculateEffects.dischargeScaling(player.researches[1][3] + 1)))} Energy)`,
+                () => `Рост цен будет на ${format(0.03)} меньше за каждый уровень.`,
+                () => `Купленные структуры будут бустить друг друга в ${format(0.01)} раз больше.`,
+                () => `Молекулы будут самопроизводиться в ${format(calculateEffects.S1Research2())} раз быстрее.`,
+                () => `Цели разряжений будут расти медленнее. (-2)\n(При покупке этого исследования следующая цель будет равна ${format(calculateEffects.dischargeCost(calculateEffects.dischargeScaling(player.researches[1][3] + 1)))} энергии)`,
                 () => { //[4]
                     const newBase = calculateEffects.dischargeBase(player.researches[1][4] + 1);
-                    return `Discharge production boost from reached goals will be increased by +${format(newBase - global.dischargeInfo.base)}.\n(This is equal to ${format((newBase / global.dischargeInfo.base) ** global.dischargeInfo.total, { padding: true })}x boost improvement)`;
+                    return `Буст от целей разряжения увеличится на ${format(newBase - global.dischargeInfo.base)}.\n(Это равно ${format((newBase / global.dischargeInfo.base) ** global.dischargeInfo.total, { padding: true })}x улучшения буста)`;
                 },
-                () => `Discharge goals will be able to boost 'Tritium'.\n(Current effect: ${format(calculateEffects.S1Research5())} ^ level)`
+                () => `Цели улучшения будут ускорят 'Тритий'.\n(Текущий эффект: ${format(calculateEffects.S1Research5())} ^ уровень)`
             ],
             cost: [],
             startCost: [1600, 4800, 16000, 32000, 16000, 24000],
@@ -942,7 +942,7 @@ export const global: globalType = {
         max: [3, 2, 1]
     },
     ASRInfo: {
-        name: 'Auto Structures',
+        name: 'Авто структуры',
         effectText: () => {
             const stageIndex = player.stage.active;
             const index = Math.min(player.ASR[stageIndex] + 1, Math.max(global.ASRInfo.max[stageIndex], 1));
@@ -972,7 +972,7 @@ export const global: globalType = {
                     }
                 }
             }
-            return `Automatically make ${unlocked ? global.buildingsInfo.name[stageIndex][index] : '(Not unlocked)'} (counts as self-made).\n(Auto ${(stageIndex === 5 && index === 3) || stageIndex >= 6 ? "for this Structure doesn't wait and ignores related settings" : `will wait until ${format(player.toggles.shop.wait[stageIndex])} times of the Structure cost`})`;
+            return `Автоматически покупает ${unlocked ? global.buildingsInfo.name[stageIndex][index] : '(Не открыто)'} (считается за купленные).\n(Авто ${(stageIndex === 5 && index === 3) || stageIndex >= 6 ? "для этой структуры не ждёт и игнорирует настройки" : `будет ждать до ${format(player.toggles.shop.wait[stageIndex])}x  стоимости структуры`})`;
         },
         costRange: [
             [],
@@ -1072,16 +1072,16 @@ export const global: globalType = {
     strangenessInfo: [
         {} as globalType['strangenessInfo'][0], { //Stage 1
             name: [
-                'Fundamental boost',
-                'Better improvement',
-                'Cheaper Discharge',
-                'Free Discharge',
-                'Automatic Discharge',
-                'Auto Structures',
-                'Strange boost',
-                'Energy increase',
-                'Conservation of Mass',
-                'Conservation of Energy'
+                'Фундаментальный буст',
+                'Лучше улучшение',
+                'Разряжение подешевле',
+                'Бесплатное разряжение',
+                'Автоматическое разряжение',
+                'Авто структуры',
+                'Странный буст',
+                'Увелечение энергии',
+                'Консервация массы',
+                'Консервация энергии'
             ],
             effectText: [
                 () => `Boost all Microworld Structures by ${format(player.inflation.vacuum ? 2 : 1.8)}.`,

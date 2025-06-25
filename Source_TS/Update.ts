@@ -470,7 +470,7 @@ export const numbersUpdate = () => {
             getId('exportQuarks').textContent = format((exportReward[1] / 2.5 + 1) * conversion, { padding: true });
             getId('exportStrangelets').textContent = format(exportReward[2] / 2.5 * conversion, { padding: true });
             const lastSave = global.lastSave / 1000;
-            if (lastSave >= 1) { getId('isSaved').textContent = `${format(lastSave, { type: 'time' })} ago`; }
+            if (lastSave >= 1) { getId('isSaved').textContent = `${format(lastSave, { type: 'time' })} назад`; }
         } else if (subtab.settingsCurrent === 'Stats') {
             getId('firstPlayAgo').textContent = format((player.time.updated - player.time.started) / 1000, { type: 'time' });
             getId('onlineTotal').textContent = format(player.time.online / 1000, { type: 'time' });
@@ -1707,6 +1707,18 @@ const updateLog = () => {
 
     for (let i = children.length - 1; i >= 1000; i--) { children[i].remove(); }
 };
+// Не я писал этот код, ИИ написал. Если что-то не так - чините сами, но вроде работает
+// Функция для склонения существительных
+function pluralize(value: number, forms: string[]): string {
+    if (!forms || forms.length < 3) return '';
+    const abs = Math.abs(value) % 100;
+    const remainder = abs % 10;
+    
+    if (abs > 10 && abs < 20) return forms[2];
+    if (remainder === 1) return forms[0];
+    if (remainder >= 2 && remainder <= 4) return forms[1];
+    return forms[2];
+}
 
 /** @param padding 'exponent' value will behave as true, but only after number turns into its shorter version */
 export const format = (input: number | Overlimit, settings = {} as { type?: 'number' | 'input' | 'time' | 'income', padding?: boolean | 'exponent' }): string => {
@@ -1715,7 +1727,7 @@ export const format = (input: number | Overlimit, settings = {} as { type?: 'num
     let padding = settings.padding;
 
     let extra;
-    if (type === 'income') { //1.2345e6 per second
+    if (type === 'income') {  //1.2345e6 per second
         const inputAbs = Math.abs(input);
         if (inputAbs >= 1) {
             extra = 'per second';
@@ -1742,43 +1754,95 @@ export const format = (input: number | Overlimit, settings = {} as { type?: 'num
             extra = 'per eon';
         }
 
+                
         if (padding === undefined) { padding = true; }
-    } else if (type === 'time') { //12 Minutes 34 Seconds
+    } else if (type === 'time') {
+        if (padding === undefined) { padding = true; }
+
         const inputAbs = Math.abs(input);
+        const value = Number(input);
+        
+        // Секунды
         if (inputAbs < 60) {
-            extra = 'секунд';
-        } else if (inputAbs < 3600) {
-            const minutes = Math.trunc(input / 60);
-            const seconds = Math.trunc(input - minutes * 60);
-            if (padding === false && seconds === 0) { return `${minutes} минут(ы)`; }
-            return `${minutes} минут(ы) ${seconds} секунд`;
-        } else if (inputAbs < 86400) {
-            const hours = Math.trunc(input / 3600);
-            const minutes = Math.trunc(input / 60 - hours * 60);
-            if (padding === false && minutes === 0) { return `${hours} часов`; }
-            return `${hours} часов ${minutes} минут(ы)`;
-        } else if (inputAbs < 31556952) {
-            const days = Math.trunc(input / 86400);
-            const hours = Math.trunc(input / 3600 - days * 24);
-            if (padding === false && hours === 0) { return `${days} дней`; }
-            return `${days} дней ${hours} часов`;
-        } else if (inputAbs < 3.1556952e10) {
-            const years = Math.trunc(input / 31556952);
-            const days = Math.trunc(input / 86400 - years * 365.2425);
-            if (padding === false && days === 0) { return `${years} лет`; }
-            return `${years} лет ${days} дней`;
-        } else if (inputAbs < 3.1556952e13) {
-            input /= 3.1556952e10;
-            extra = 'тысяч лет';
-        } else if (inputAbs < 3.1556952e16) {
-            input /= 3.1556952e13;
-            extra = 'миллионов лет';
-        } else {
-            input /= 3.1556952e16;
-            extra = 'миллиардов лет';
+            return `${Math.trunc(value)} ${pluralize(value, ['секунда', 'секунды', 'секунд'])}`;
+        } 
+        // Минуты + секунды
+        else if (inputAbs < 3600) {
+            const minutes = Math.trunc(value / 60);
+            const seconds = Math.trunc(value % 60);
+            
+            if (padding === false && seconds === 0) {
+                return `${minutes} ${pluralize(minutes, ['минута', 'минуты', 'минут'])}`;
+            }
+            return `${minutes} ${pluralize(minutes, ['минута', 'минуты', 'минут'])} ` +
+                   `${Math.abs(seconds)} ${pluralize(seconds, ['секунда', 'секунды', 'секунд'])}`;
+        } 
+        // Часы + минуты
+        else if (inputAbs < 86400) {
+            const hours = Math.trunc(value / 3600);
+            const minutes = Math.trunc((value % 3600) / 60);
+            
+            if (padding === false && minutes === 0) {
+                return `${hours} ${pluralize(hours, ['час', 'часа', 'часов'])}`;
+            }
+            return `${hours} ${pluralize(hours, ['час', 'часа', 'часов'])} ` +
+                   `${Math.abs(minutes)} ${pluralize(minutes, ['минута', 'минуты', 'минут'])}`;
+        } 
+        // Дни + часы
+        else if (inputAbs < 31556952) {
+            const days = Math.trunc(value / 86400);
+            const hours = Math.trunc((value % 86400) / 3600);
+            
+            if (padding === false && hours === 0) {
+                return `${days} ${pluralize(days, ['день', 'дня', 'дней'])}`;
+            }
+            return `${days} ${pluralize(days, ['день', 'дня', 'дней'])} ` +
+                   `${Math.abs(hours)} ${pluralize(hours, ['час', 'часа', 'часов'])}`;
+        } 
+        // Годы + дни
+        else if (inputAbs < 3.1556952e10) {
+            const years = Math.trunc(value / 31556952);
+            const days = Math.trunc((value % 31556952) / 86400);
+            
+            if (padding === false && days === 0) {
+                return `${years} ${pluralize(years, ['год', 'года', 'лет'])}`;
+            }
+            return `${years} ${pluralize(years, ['год', 'года', 'лет'])} ` +
+                   `${Math.abs(days)} ${pluralize(days, ['день', 'дня', 'дней'])}`;
+        } 
+        // Большие периоды (тыс./млн./млрд./трлн. лет)
+        else {
+            let scaled, unit;
+            
+            if (inputAbs < 3.1556952e13) {
+                scaled = value / 3.1556952e10;
+                unit = ['тысяча', 'тысячи', 'тысяч'];
+            } else if (inputAbs < 3.1556952e16) {
+                scaled = value / 3.1556952e13;
+                unit = ['миллион', 'миллиона', 'миллионов'];
+            } else if (inputAbs < 3.1556952e19) {
+                scaled = value / 3.1556952e16;
+                unit = ['миллиард', 'миллиарда', 'миллиардов'];
+            } else {
+                scaled = value / 3.1556952e19;
+                unit = ['триллион', 'триллиона', 'триллионов'];
+            }
+
+            // Форматирование дробных чисел
+            let formatted = scaled;
+            if (Math.abs(scaled) > 100) formatted = Number(scaled.toFixed(1));
+            else if (Math.abs(scaled) > 10) formatted = Number(scaled.toFixed(2));
+            else formatted = Number(scaled.toFixed(3));
+            
+            // Определение формы слова
+            const isInteger = Math.floor(scaled) === scaled;
+            const unitWord = isInteger 
+                ? pluralize(scaled, unit) 
+                : pluralize(Math.floor(Math.abs(scaled)), unit);
+            
+            return `${formatted} ${unitWord} лет`;
         }
 
-        if (padding === undefined) { padding = true; }
     }
     if (!isFinite(input)) { return extra !== undefined ? `${input} ${extra}` : `${input}`; }
 
