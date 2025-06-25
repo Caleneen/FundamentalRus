@@ -517,7 +517,7 @@ export const global: globalType = {
                 () => `Купленные структуры усиливают себя в ${format(calculateEffects.S1Upgrade7())} раз.${player.inflation.vacuum ?
                     `\n(Купленные Преоны усиливают себя в ${format(calculateEffects.S1Upgrade7(true), { padding: true })} раз (быстрый софткап и отключение после ${format(1001)} Преонов)` : ''}`,
                 () => `Молекулы смогут создавать новые молекулы с уменьшенной скоростью.\n(${format(new Overlimit(effectsCache.tritium).multiply(global.inflationInfo.globalSpeed), { padding: true })} молекул/сек)`,
-                () => `Неиспользованная энергия ${player.upgrades[1][10] === 1 ? '' : `^${format(0.5)}`} усиливает производство "Трития".\n(Текущий бонус: ${format(calculateEffects.S1Upgrade9(), { padding: true })})`,
+                () => `Усиливает производство "Трития" по формуле неиспользованная энергия${player.upgrades[1][10] === 1 ? '' : `^${format(0.5)}`}.\n(Текущий бонус: ${format(calculateEffects.S1Upgrade9(), { padding: true })})`,
                 () => 'Раскрывает полную силу ядерного синтеза, увеличивая эффективность энергии в 2 раза.'
             ],
             startCost: [40, 60, 100, 120, 180, 360, 1200, 3600, 12000, 80000, 2.4e6],
@@ -972,7 +972,7 @@ export const global: globalType = {
                     }
                 }
             }
-            return `Автоматически покупает ${unlocked ? global.buildingsInfo.name[stageIndex][index] : '(Не открыто)'} (считается за купленные).\n(Авто ${(stageIndex === 5 && index === 3) || stageIndex >= 6 ? 'для этой структуры не ждёт и игнорирует настройки' : `будет ждать до ${format(player.toggles.shop.wait[stageIndex])}x  стоимости структуры`})`;
+            return `Автоматически покупает ${unlocked ? global.buildingsInfo.name[stageIndex][index] : '(Не открыто)'} (считается за купленные).\n(Авто ${(stageIndex === 5 && index === 3) || stageIndex >= 6 ? 'для этой структуры не ждёт и игнорирует настройки' : `будет покупать по ${format(player.toggles.shop.wait[stageIndex])}x структуры за раз`})`;
         },
         costRange: [
             [],
