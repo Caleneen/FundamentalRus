@@ -1713,7 +1713,7 @@ function pluralize(value: number, forms: string[]): string {
     if (!forms || forms.length < 3) return '';
     const abs = Math.abs(value) % 100;
     const remainder = abs % 10;
-    
+
     if (abs > 10 && abs < 20) return forms[2];
     if (remainder === 1) return forms[0];
     if (remainder >= 2 && remainder <= 4) return forms[1];
@@ -1730,75 +1730,75 @@ export const format = (input: number | Overlimit, settings = {} as { type?: 'num
     if (type === 'income') {  //1.2345e6 per second
         const inputAbs = Math.abs(input);
         if (inputAbs >= 1) {
-            extra = 'per second';
+            extra = 'в секунду';
         } else if (inputAbs >= 1 / 60) {
             input *= 60;
-            extra = 'per minute';
+            extra = 'в минуту';
         } else if (inputAbs >= 1 / 3600) {
             input *= 3600;
-            extra = 'per hour';
+            extra = 'в час';
         } else if (inputAbs >= 1 / 86400) {
             input *= 86400;
-            extra = 'per day';
+            extra = 'в день';
         } else if (inputAbs >= 1 / 31556952) {
             input *= 31556952;
-            extra = 'per year';
+            extra = 'в год';
         } else if (inputAbs >= 1 / 3.1556952e10) {
             input *= 3.1556952e10;
-            extra = 'per millennium';
+            extra = 'в тысячалетие';
         } else if (inputAbs >= 1 / 3.1556952e13) {
             input *= 3.1556952e13;
-            extra = 'per megaannum';
+            extra = 'в миллионолетие';
         } else {
             input *= 3.1556952e16;
-            extra = 'per eon';
+            extra = 'в миллиардолетие';
         }
 
-                
+
         if (padding === undefined) { padding = true; }
     } else if (type === 'time') {
         if (padding === undefined) { padding = true; }
 
         const inputAbs = Math.abs(input);
         const value = Number(input);
-        
+
         // Секунды
         if (inputAbs < 60) {
             return `${Math.trunc(value)} ${pluralize(value, ['секунда', 'секунды', 'секунд'])}`;
-        } 
+        }
         // Минуты + секунды
         else if (inputAbs < 3600) {
             const minutes = Math.trunc(value / 60);
             const seconds = Math.trunc(value % 60);
-            
+
             if (padding === false && seconds === 0) {
                 return `${minutes} ${pluralize(minutes, ['минута', 'минуты', 'минут'])}`;
             }
             return `${minutes} ${pluralize(minutes, ['минута', 'минуты', 'минут'])} ` +
                    `${Math.abs(seconds)} ${pluralize(seconds, ['секунда', 'секунды', 'секунд'])}`;
-        } 
+        }
         // Часы + минуты
         else if (inputAbs < 86400) {
             const hours = Math.trunc(value / 3600);
             const minutes = Math.trunc((value % 3600) / 60);
-            
+
             if (padding === false && minutes === 0) {
                 return `${hours} ${pluralize(hours, ['час', 'часа', 'часов'])}`;
             }
             return `${hours} ${pluralize(hours, ['час', 'часа', 'часов'])} ` +
                    `${Math.abs(minutes)} ${pluralize(minutes, ['минута', 'минуты', 'минут'])}`;
-        } 
+        }
         // Дни + часы
         else if (inputAbs < 31556952) {
             const days = Math.trunc(value / 86400);
             const hours = Math.trunc((value % 86400) / 3600);
-            
+
             if (padding === false && hours === 0) {
                 return `${days} ${pluralize(days, ['день', 'дня', 'дней'])}`;
             }
             return `${days} ${pluralize(days, ['день', 'дня', 'дней'])} ` +
                    `${Math.abs(hours)} ${pluralize(hours, ['час', 'часа', 'часов'])}`;
-        } 
+        }
         // Годы + дни
         else if (inputAbs < 3.1556952e10) {
             const years = Math.trunc(value / 31556952);
@@ -1833,13 +1833,12 @@ export const format = (input: number | Overlimit, settings = {} as { type?: 'num
             if (Math.abs(scaled) > 100) formatted = Number(scaled.toFixed(1));
             else if (Math.abs(scaled) > 10) formatted = Number(scaled.toFixed(2));
             else formatted = Number(scaled.toFixed(3));
-            
+
             // Определение формы слова
             const isInteger = Math.floor(scaled) === scaled;
-            const unitWord = isInteger 
-                ? pluralize(scaled, unit) 
+            const unitWord = isInteger
+                ? pluralize(scaled, unit)
                 : pluralize(Math.floor(Math.abs(scaled)), unit);
-            
             return `${formatted} ${unitWord} лет`;
         }
 
