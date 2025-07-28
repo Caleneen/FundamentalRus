@@ -647,9 +647,9 @@ export const global: globalType = {
                 () => `Цели разряжений будут расти медленнее. (-2)\n(При покупке этого исследования следующая цель будет равна ${format(calculateEffects.dischargeCost(calculateEffects.dischargeScaling(player.researches[1][3] + 1)))} энергии)`,
                 () => { //[4]
                     const newBase = calculateEffects.dischargeBase(player.researches[1][4] + 1);
-                    return `Буст от целей разряжения увеличится на ${format(newBase - global.dischargeInfo.base)}.\n(Это равно ${format((newBase / global.dischargeInfo.base) ** global.dischargeInfo.total, { padding: true })}x улучшения буста)`;
+                    return `Буст от целей разряжения увеличится на ${format(newBase - global.dischargeInfo.base)}.\n(То есть ваш текущий буст увеличится в ${format((newBase / global.dischargeInfo.base) ** global.dischargeInfo.total, { padding: true })} раз)`;
                 },
-                () => `Цели улучшения будут ускорят 'Тритий'.\n(Текущий эффект: ${format(calculateEffects.S1Research5())} ^ уровень)`
+                () => `Цели разряжения будут ускорять 'Тритий'.\n(Текущий эффект: ${format(calculateEffects.S1Research5())} ^ уровень)`
             ],
             cost: [],
             startCost: [1600, 4800, 16000, 32000, 16000, 24000],
