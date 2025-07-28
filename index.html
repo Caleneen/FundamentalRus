@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="Style_PhoneMini.css" media="screen and (max-width: 394px)" id="miniPhoneStyle">
         <link rel="icon" href="Used_art/Stage.png">
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0" id="viewportMeta">
-        <meta name="description" content="Explore the Universe with this idle-game">
+        <meta name="description" content="Исследуй вселенную в этой айдл-игре">
         <script src="Code.js" defer></script>
     </head>
     <body class="noFocusOutline noTextSelection">
@@ -44,11 +44,11 @@
             <div id="stageTab">
                 <section id="stageSubtabStructures" class="insideTab" aria-label="Current tab">
                     <article id="resets" aria-label="Resets">
-                        <section id="resetStage" aria-label="Stage reset">
-                            <p class="whiteText">Текущий этап <span id="stageWord" class="bigWord">микромир</span>.<br>Resets everything Stage related to <span id="stageRewardNew">gain <span id="stageReward">0</span> Strange quarks</span><span id="stageRewardOld">increase current Stage</span>.</p>
+                        <section id="resetStage" aria-label="Сброс этапа">
+                            <p class="whiteText">Текущий этап <span id="stageWord" class="bigWord">микромир</span>.<br>Сбрасывает всё связанное с <span id="stageRewardNew"> Заработать <span id="stageReward">0</span> странных кварков</span><span id="stageRewardOld">увеличить текущий этап</span>.</p>
                             <button type="button" id="stageReset" tabindex="-1">Missing</button>
                         </section>
-                        <section id="reset1Main" aria-label="Basic reset">
+                        <section id="reset1Main" aria-label="Базовый сброс">
                             <p class="whiteText stage1Only"><span class="orangeText">Разряжение</span> сбрасывает структуры и потраченная <span class="orangeText">энергия</span> может быть заработана снова для повышения буста.</p>
                             <p class="whiteText stage2Only"><span class="blueText">Испарение</span> сбрасывает структуры и улучшения, получая <span class="grayText">облака</span>. Их заработок базирован на текущем количестве <span class="blueText">каплей</span>.</p>
                             <p class="whiteText stage3Only"><img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false" id="rankImage">Текущий <span class="darkorchidText">ранг</span> - <span id="rankName">Missing</span>.<br>Сбрасывает структуры, улучшения и исследования этапа.</p>
@@ -57,17 +57,17 @@
                             <button type="button" id="reset1Button" tabindex="-1">Missing</button>
                         </section>
                     </article>
-                    <article id="buildings" aria-label="Structures">
-                        <section id="specials" aria-label="Special Structures">
-                            <div id="special1" title="Red giants">
+                    <article id="buildings" aria-label="Структуры">
+                        <section id="specials" aria-label="Особые структуры">
+                            <div id="special1" title="Красные гиганты">
                                 <img src="Used_art/Red%20giant.png" alt="" loading="lazy" draggable="false">
                                 <p class="whiteText"><span id="special1Cur">0</span><span>(+<span id="special1Get">0</span>)</span></p>
                             </div>
-                            <div id="special2" title="Neutron stars">
+                            <div id="special2" title="Нейтронные звёзды">
                                 <img src="Used_art/Neutron%20star.png" alt="" loading="lazy" draggable="false">
                                 <p class="whiteText"><span id="special2Cur">0</span><span>(+<span id="special2Get">0</span>)</span></p>
                             </div>
-                            <div id="special3" title="Black holes">
+                            <div id="special3" title="Чёрные дыры">
                                 <img src="Used_art/Black%20hole.png" alt="" loading="lazy" draggable="false">
                                 <p class="whiteText"><span id="special3Cur" class="grayText">0</span><span>(+<span id="special3Get">0</span>)</span></p>
                             </div>
@@ -75,7 +75,7 @@
                         <section id="building1" class="buyBuilding stageText" aria-labelledby="building1Name">
                             <img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false">
                             <div>
-                                <p><span id="building1Name">Placeholder</span>: <span id="building1Cur" class="whiteText">0</span> <span id="building1True" class="yellowText">[0]</span></p>
+                                <p><span id="building1Name">Плейсхолдер</span>: <span id="building1Cur" class="whiteText">0</span> <span id="building1True" class="yellowText">[0]</span></p>
                                 <p id="building1ProdDiv" title="Missing"><span>производит</span>: <span id="building1Prod" class="whiteText">0</span></p>
                             </div>
                             <div>
@@ -90,7 +90,7 @@
                         <section id="building2" class="buyBuilding stageText" aria-labelledby="building2Name">
                             <img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false">
                             <div>
-                                <p><span id="building2Name">Placeholder</span>: <span id="building2Cur" class="whiteText">0</span> <span id="building2True" class="yellowText">[0]</span></p>
+                                <p><span id="building2Name">Плейсхолдер</span>: <span id="building2Cur" class="whiteText">0</span> <span id="building2True" class="yellowText">[0]</span></p>
                                 <p id="building2ProdDiv" title="Missing"><span>производит</span>: <span id="building2Prod" class="whiteText">0</span></p>
                             </div>
                             <div>
@@ -105,7 +105,7 @@
                         <section id="building3" class="buyBuilding stageText" aria-labelledby="building3Name">
                             <img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false">
                             <div>
-                                <p><span id="building3Name">Placeholder</span>: <span id="building3Cur" class="whiteText">0</span> <span id="building3True" class="yellowText">[0]</span></p>
+                                <p><span id="building3Name">Плейсхолдер</span>: <span id="building3Cur" class="whiteText">0</span> <span id="building3True" class="yellowText">[0]</span></p>
                                 <p id="building3ProdDiv" title="Missing"><span>производит</span>: <span id="building3Prod" class="whiteText">0</span></p>
                             </div>
                             <div>
@@ -120,7 +120,7 @@
                         <section id="building4" class="buyBuilding stageText" aria-labelledby="building4Name">
                             <img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false">
                             <div>
-                                <p><span id="building4Name">Placeholder</span>: <span id="building4Cur" class="whiteText">0</span> <span id="building4True" class="yellowText">[0]</span></p>
+                                <p><span id="building4Name">Плейсхолдер</span>: <span id="building4Cur" class="whiteText">0</span> <span id="building4True" class="yellowText">[0]</span></p>
                                 <p id="building4ProdDiv" title="Missing"><span>производит</span>: <span id="building4Prod" class="whiteText">0</span></p>
                             </div>
                             <div>
@@ -135,7 +135,7 @@
                         <section id="building5" class="buyBuilding stageText" aria-labelledby="building5Name">
                             <img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false">
                             <div>
-                                <p><span id="building5Name">Placeholder</span>: <span id="building5Cur" class="whiteText">0</span> <span id="building5True" class="yellowText">[0]</span></p>
+                                <p><span id="building5Name">Плейсхолдер</span>: <span id="building5Cur" class="whiteText">0</span> <span id="building5True" class="yellowText">[0]</span></p>
                                 <p id="building5ProdDiv" title="Missing"><span>производит</span>: <span id="building5Prod" class="whiteText">0</span></p>
                             </div>
                             <div>
@@ -150,7 +150,7 @@
                         <section id="building6" class="buyBuilding stageText" aria-labelledby="building6Name">
                             <img src="Used_art/Missing.png" alt="" loading="lazy" draggable="false">
                             <div>
-                                <p><span id="building6Name">Placeholder</span>: <span id="building6Cur" class="whiteText">0</span> <span id="building6True" class="yellowText">[0]</span></p>
+                                <p><span id="building6Name">Плейсхолдер</span>: <span id="building6Cur" class="whiteText">0</span> <span id="building6True" class="yellowText">[0]</span></p>
                                 <p id="building6ProdDiv" title="Missing"><span>производит</span>: <span id="building6Prod" class="whiteText">0</span></p>
                             </div>
                             <div>
@@ -166,7 +166,7 @@
                             <button type="button" id="makeAllStructures" class="hollowButton">Сделать всё</button>
                             <div>
                                 <input type="number" id="buyAnyInput" step="1">
-                                <label for="buyAnyInput" class="popUpMenu">Сколько структур сделать одновременно <br>(Будет максимум если поставить 0, игнорируется при зажатии Shift или Ctrl)</label>
+                                <label for="buyAnyInput" class="popUpMenu">Сколько структур делать одновременно <br>(Будет максимум если поставить 0, игнорируется при зажатии Shift или Ctrl)</label>
                             </div>
                             <div id="autoWaitMain">
                                 <input type="number" id="autoWaitInput" step="any">
@@ -446,51 +446,51 @@
                 </section>
             </div>
             <div id="strangenessTab" style="display: none;">
-                <section id="strangenessSubtabMatter" class="insideTab" aria-label="Current tab">
+                <section id="strangenessSubtabMatter" class="insideTab" aria-label="Текущая вкладка">
                     <div class="center greenText">
-                        <h2 class="biggerWord">Strange matter</h2>
-                        <p>Stage reset reward: <span class="whiteText"><span id="strange0Gain">1</span> Strange quarks</span><span id="strange1Unlocked">, <span class="whiteText"><span id="strange1Gain">1</span> Strangelets</span></span></p>
-                        <p>Strange quarks rate: <span id="strangeRate" class="whiteText">0 per eon</span><span id="strangePeak"> (Peak: <span class="whiteText">0 per eon</span> | At: <span id="strangePeakedAt" class="whiteText">0 seconds</span>)</span></p>
-                        <p>Stage time: <span id="stageTimeStrangeness" class="whiteText">0 seconds</span><span id="stageTimeBestReset"> (From the best reset: <span class="whiteText">1 seconds</span>)</span></p>
+                        <h2 class="biggerWord">Странная материя</h2>
+                        <p>Награда сброса этапа: <span class="whiteText"><span id="strange0Gain">1</span> странных кварков</span><span id="strange1Unlocked">, <span class="whiteText"><span id="strange1Gain">1</span> странгелетов</span></span></p>
+                        <p>Добыча странных кварков: <span id="strangeRate" class="whiteText">0 per eon</span><span id="strangePeak"> (Пик: <span class="whiteText">0 per eon</span> | At: <span id="strangePeakedAt" class="whiteText">0 seconds</span>)</span></p>
+                        <p>Время этапа: <span id="stageTimeStrangeness" class="whiteText">0 seconds</span><span id="stageTimeBestReset"> (С лучшего сброса: <span class="whiteText">1 seconds</span>)</span></p>
                     </div>
                     <article id="strangeStructures" class="greenText" aria-label="Strange Structures">
                         <section id="strange0" class="noFocusOutline" tabindex="0" aria-haspopup="dialog" aria-controls="strange0EffectsMain"> <!-- Tabindex here is to make window close easier -->
-                            <h3>Strange quarks</h3>
+                            <h3>Странные кварки</h3>
                             <div>
                                 <img src="Used_art/Strange%20Quarks.png" alt="" loading="lazy" draggable="false">
                                 <p id="strange0Cur">0</p>
                             </div>
                             <div id="strange0EffectsMain" class="popUpMenu mainText" data-open="false" style="display: none;" role="dialog">
-                                <h4 class="bigWord">Current effects:</h4>
+                                <h4 class="bigWord">Текущие эффекты:</h4>
                                 <ul class="whiteText">
-                                    <li>Improving all Microworld Structures by <span id="strange0Effect1Stat">1</span></li>
-                                    <li>Improving Puddles by <span id="strange0Effect2Stat">1</span></li>
-                                    <li>Making all Accretion Structures cheaper by <span id="strange0Effect3Stat">1</span></li>
-                                    <li>Improving all Interstellar Structures by <span id="strange0Effect4Stat">1</span></li>
-                                    <li>Increasing Solar mass gain by <span id="strange0Effect5Stat">1</span></li>
+                                    <li>Улучшают структуры микромира в <span id="strange0Effect1Stat">1</span> раз</li>
+                                    <li>Улучшают лужи в <span id="strange0Effect2Stat">1</span> раз</li>
+                                    <li>Удешевля.ют структуры аккреции в <span id="strange0Effect3Stat">1</span> раз</li>
+                                    <li>Улучшают межзвёздные структуры в <span id="strange0Effect4Stat">1</span> раз</li>
+                                    <li>Увеличивают заработок солнечной массы в <span id="strange0Effect5Stat">1</span> раз</li>
                                 </ul>
                             </div>
                         </section>
                         <section id="strange1" class="noFocusOutline" tabindex="0" aria-haspopup="dialog" aria-controls="strange1EffectsMain">
-                            <h3>Strangelets</h3>
+                            <h3>Странгелеты</h3>
                             <div>
                                 <img src="Used_art/Strangelets.png" alt="" loading="lazy" draggable="false">
                                 <p id="strange1Cur">0</p>
                             </div>
                             <div id="strange1EffectsMain" class="popUpMenu mainText" data-open="false" style="display: none;" role="dialog">
-                                <h4 class="bigWord">Current effects:</h4>
+                                <h4 class="bigWord">Текущие эффекты:</h4>
                                 <ul class="whiteText">
-                                    <li>Producing <span id="strange1Effect1Stat0">0</span>% of current Strange quarks rate<br>(<span id="strange1Effect1Allowed">Which is equal to <span id="strange1Effect1Stat1">0 per eon</span></span><span id="strange1Effect1Disabled" style="display: none;">For Interstellar Stage only</span><span id="strange1GlobalSpeedInfo">, not affected by global speed</span>)</li>
-                                    <li>Increasing Stage reset reward by <span id="strange1Effect2Stat">1</span></li>
+                                        <li>Производят <span id="strange1Effect1Stat0">0</span>% от текущей добычи странных кварков<br>(<span id="strange1Effect1Allowed">Что равняется <span id="strange1Effect1Stat1">0 per eon</span></span><span id="strange1Effect1Disabled" style="display: none;">Только для межзвёздного этапа</span><span id="strange1GlobalSpeedInfo">, не под влиянием глобальной скорости</span>)</li>
+                                    <li>Увеличивают награду за сброс этапа в <span id="strange1Effect2Stat">1</span></li>
                                 </ul>
                             </div>
                         </section>
                     </article>
-                    <h2 id="strangenessHeader" class="greenText center"><span class="bigWord">Странность</span><span><br><button type="button" id="strangenessVisibility" class="selectBtn">Permanent ones are hidden</button></span></h2>
+                    <h2 id="strangenessHeader" class="greenText center"><span class="bigWord">Странность</span><span><br><button type="button" id="strangenessVisibility" class="selectBtn">Перманентные спрятанны</button></span></h2>
                     <article id="strangenessResearch" aria-labelledby="strangenessHeader">
-                        <section id="strangenessSection1" class="researchesDiv stage1borderImage" aria-label="Microworld">
+                        <section id="strangenessSection1" class="researchesDiv stage1borderImage" aria-label="Микромир">
                             <div id="strange1Stage1" class="whiteText stage1borderImage">
-                                <input type="image" src="Used_art/Particle+.png" alt="Fundamental boost" draggable="false" id="strange1Stage1Image" class="interactiveImage" aria-controls="strangenessCost strangenessEffect">
+                                <input type="image" src="Used_art/Particle+.png" alt="Фундаментальный буст" draggable="false" id="strange1Stage1Image" class="interactiveImage" aria-controls="strangenessCost strangenessEffect">
                                 <p><span id="strange1Stage1Level">0</span>/<span id="strange1Stage1Max" class="greenText">1</span></p>
                             </div>
                             <div id="strange2Stage1" class="whiteText stage1borderImage">
