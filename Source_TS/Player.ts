@@ -282,7 +282,7 @@ export const global: globalType = {
             ['Массы', 'Космической пыли', 'Планетезималей', 'Протопланет', 'Спутников', 'Спутников спутника'],
             ['Звёздной пыли', 'Коричневых карликов', 'Главнаых последовательностей', 'Красных супергигантов', 'Синих гипергигантов', 'Квазизвёзд'],
             ['Звёзд', 'Туманностей', 'Звёздных скоплений', 'Галактик'],
-            ['Тёмной материи', 'Вселенных']
+            ['Тёмной материи', 'Вселенных'],
             ['Dark matter', 'Dark planets']
         ],
         hoverText: [
@@ -301,8 +301,8 @@ export const global: globalType = {
             ['создаёт', 'создаёт', 'создаёт', 'улучшает', 'улучшает'],
             ['создаёт', 'создаёт', 'создаёт', 'создаёт', 'создаёт'],
             ['создаёт', 'улучшает', 'улучшает'],
-            ['создаёт']
-            ['delaying']
+            ['создаёт'],
+            ['медлит']
         ],
         firstCost: [
             [],
@@ -1491,8 +1491,8 @@ export const prepareVacuum = (state: boolean) => { //Must not use direct player 
         specialHTML.footerStatsHTML[1][0] = ['Energy%20mass.png', 'stage1borderImage cyanText', 'Mass'];
         buildingsInfo.hoverText[2][0] = 'Tritium';
         buildingsInfo.hoverText[3][0] = 'Preons hardcap';
-        buildingsInfo.type[2][0] = 'improving';
-        buildingsInfo.type[3][0] = 'delaying';
+        buildingsInfo.type[2][0] = 'улучшает';
+        buildingsInfo.type[3][0] = 'медлит';
         buildings[1][0].current.setValue(5.476e-3);
         buildings[2][0].current.setValue(0);
         buildings[3][0].current.setValue(9.76185667392e-36);
@@ -1601,8 +1601,8 @@ export const prepareVacuum = (state: boolean) => { //Must not use direct player 
         specialHTML.footerStatsHTML[1][0] = ['Quarks.png', 'stage1borderImage cyanText', 'Quarks'];
         buildingsInfo.hoverText[2][0] = 'Moles';
         buildingsInfo.hoverText[3][0] = 'Mass';
-        buildingsInfo.type[2][0] = 'producing';
-        buildingsInfo.type[3][0] = 'producing';
+        buildingsInfo.type[2][0] = 'создаёт';
+        buildingsInfo.type[3][0] = 'создаёт';
         buildings[1][0].current.setValue(3);
         buildings[2][0].current.setValue(2.7753108348135e-3);
         buildings[3][0].current.setValue(1e-19);
