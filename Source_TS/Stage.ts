@@ -1674,7 +1674,10 @@ export const buyStrangeness = (upgrade: number, stageIndex: number, type: 'stran
             }
         } else if (stageIndex === 5) {
             if (upgrade === 3) {
-                if (player.inflation.vacuum) { stageUpdate(false); }
+                if (player.inflation.vacuum) {
+                    stageUpdate(false);
+                    if (player.elements[26] >= 1) { awardVoidReward(4); }
+                }
             } else if (upgrade === 4) {
                 if (strangeness[5] >= 1) {
                     if (player.clone.depth === 'stage') { player.clone.ASR[5] = global.ASRInfo.max[5]; }

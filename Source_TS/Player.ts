@@ -1137,7 +1137,7 @@ export const global: globalType = {
                 () => `More matter for the Accretion (flavor text), first two Intergalactic Structures will be ${format(player.inflation.vacuum ? 1.4 : 1.6)} times stronger.`,
                 () => `With higher density, first two Intergalactic upgrades will be even stronger. Effects will be increased by ${format(player.inflation.vacuum ? 1.6 : 1.8)}.`,
                 () => `Gain ${format(1.4)} times more Strange quarks from any Stage reset.`,
-                () => player.inflation.vacuum ? `Unlock Intergalactic Stage and increase Strange quarks from Stage resets by +1.${player.challenges.active === 0 && player.challenges.super && player.tree[1][6] >= 4 ? "\n(Also increase 'Rank raise' Strangeness level to 1 for free)" : ''}` : `Make Intergalactic Stage immune to Collapse reset${player.verses[0].current < 3 ? " and allow 'Upgrade automatization' to work within the Intergalactic Stage" : ''}.`,
+                () => player.inflation.vacuum ? 'Unlock Intergalactic Stage and increase Strange quarks from Stage resets by +1.' : `Make Intergalactic Stage immune to Collapse reset${player.verses[0].current < 3 ? " and allow 'Upgrade automatization' to work within the Intergalactic Stage" : ''}.`,
                 () => 'Automatically Collapse if able to afford a new Galaxy and auto Galaxy is enabled.\n(Also unlocks permanent auto Galaxies for free and removes Mass limit for auto Collapse points)',
                 () => `Make auto for ${player.strangeness[5][4] >= 1 ? 'all' : 'the first two'} Intergalactic Structures permanent${player.strangeness[5][4] < 1 ? ' and prevent the rest from resetting' : ''}.`,
                 () => `Automatically trigger Stage reset${player.inflation.vacuum ? ' (disabled while inside the Void) or leave current Challenge if time limit is reached' : `, doesn't work for the Interstellar Stage until second level${player.stage.true >= 8 || player.verses[0].true >= 6 ? ' (disabled while inside Vacuum stability)' : ''}`}. (Needs to be enabled in Settings)`,
@@ -1492,17 +1492,17 @@ export const prepareVacuum = (state: boolean) => { //Must not use direct player 
         buildings[1][0].current.setValue(5.476e-3);
         buildings[2][0].current.setValue(0);
         buildings[3][0].current.setValue(9.76185667392e-36);
-        buildingsInfo.maxActive[1] = buildingsInfo.firstCost[1].length;
-        buildingsInfo.maxActive[2] = buildingsInfo.firstCost[2].length;
-        buildingsInfo.maxActive[3] = buildingsInfo.firstCost[3].length;
-        buildingsInfo.maxActive[4] = buildingsInfo.firstCost[4].length;
-        buildingsInfo.maxActive[6] = buildingsInfo.firstCost[6].length;
         if (buildingsInfo.name[1][0] !== 'Mass') {
             specialHTML.buildingHTML[1].unshift('Preon.png', 'Quarks.png');
             buildingsInfo.name[1].unshift('Mass', 'Preons');
             buildingsInfo.hoverText[1].unshift('Mass', 'Preons');
         }
         buildingsInfo.firstCost[1] = [0, 0.005476, 6, 3, 24, 3];
+        buildingsInfo.maxActive[1] = buildingsInfo.firstCost[1].length;
+        buildingsInfo.maxActive[2] = buildingsInfo.firstCost[2].length;
+        buildingsInfo.maxActive[3] = buildingsInfo.firstCost[3].length;
+        buildingsInfo.maxActive[4] = buildingsInfo.firstCost[4].length;
+        buildingsInfo.maxActive[6] = buildingsInfo.firstCost[6].length;
 
         upgrades1Cost = [40, 60, 100, 120, 180, 360, 1200, 3600, 12000, 80000];
         (upgradesInfo[2].cost[0] as Overlimit).setValue(10);
@@ -1597,6 +1597,8 @@ export const prepareVacuum = (state: boolean) => { //Must not use direct player 
         specialHTML.footerStatsHTML[1][0] = ['Quarks.png', 'stage1borderImage cyanText', 'Quarks'];
         buildingsInfo.hoverText[2][0] = 'Moles';
         buildingsInfo.hoverText[3][0] = 'Mass';
+        buildingsInfo.type[2][0] = 'producing';
+        buildingsInfo.type[3][0] = 'producing';
         buildings[1][0].current.setValue(3);
         buildings[2][0].current.setValue(2.7753108348135e-3);
         buildings[3][0].current.setValue(1e-19);
@@ -1605,14 +1607,12 @@ export const prepareVacuum = (state: boolean) => { //Must not use direct player 
             buildingsInfo.name[1].splice(0, 2);
             buildingsInfo.hoverText[1].splice(0, 2);
         }
+        buildingsInfo.firstCost[1] = [0, 3, 24, 3];
         buildingsInfo.maxActive[1] = 4;
         buildingsInfo.maxActive[2] = 6;
         buildingsInfo.maxActive[3] = 5;
         buildingsInfo.maxActive[4] = 5;
         buildingsInfo.maxActive[6] = 1;
-        buildingsInfo.firstCost[1] = [0, 3, 24, 3];
-        buildingsInfo.type[2][0] = 'producing';
-        buildingsInfo.type[3][0] = 'producing';
         global.buildingsInfo.producing[4][5].setValue(0);
         getQuery('#star3Effect > span.info').textContent = 'Boost to the Solar mass gain';
 
