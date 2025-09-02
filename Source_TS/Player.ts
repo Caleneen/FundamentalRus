@@ -1941,6 +1941,7 @@ export const updatePlayer = (load: playerType): string => {
             throw new ReferenceError(`Save file version ${load.version} is not allowed`);
         }
     }
+    load.strangeness[6].length = 4;
     if (load.tree[0].length === 6) {
         if (load.inflation.ends[1] < 5) {
             load.verses[0].current -= 5 - load.inflation.ends[1];
