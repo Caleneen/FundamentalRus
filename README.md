@@ -23,14 +23,14 @@
 4. `npm run fix` - автоматически починит если сможет.
 
 ## Заметки для переводчиков:
-Self-made = купленные
-Hardcap/softcap = хардкап/софткап
-Microworld = микромир
-Submerged = погружённый
-Accretion = аккреция
-Interstellar = межзвёздный
-Intergalactic = межгалактический
-Void = пустота
-Abyss = бездна
-Drops = капли
-Puddles = лужи
+Self-made = купленные \
+Hardcap/softcap = хардкап/софткап \
+Microworld = микромир \
+Submerged = погружённый \
+Accretion = аккреция \
+Interstellar = межзвёздный \
+Intergalactic = межгалактический \
+Void = пустота \
+Abyss = бездна \
+Drops = капли \
+Puddles = лужи \
