@@ -1,6 +1,6 @@
-import { checkBuilding, checkUpgrade, checkVerse, milestoneCheck } from './Check';
+import { allowedToEnter, checkBuilding, checkUpgrade, checkVerse, milestoneCheck } from './Check';
 import Overlimit, { compareFunc } from './Limit';
-import { changeRewardType, getId, loadoutsVisual, playerStart, simulateOffline } from './Main';
+import { changeRewardType, getId, loadoutsFinal, playerStart, simulateOffline } from './Main';
 import { effectsCache, global, player, prepareVacuum } from './Player';
 import { cloneBeforeReset, loadFromClone, reset, resetStage, resetVacuum } from './Reset';
 import { Confirm, Notify, errorNotify, globalSave, playEvent, specialHTML } from './Special';
@@ -820,11 +820,12 @@ export const assignBuildingsProduction = {
         let globalMult = (vacuum ? 1.4 : 1.6) ** player.strangeness[5][0];
         if (vacuum && player.tree[0][4] >= 1) { globalMult *= global.milestonesInfo[5].reward[0]; }
 
-        let multiplier2 = 2 * (2 ** player.researches[5][1]) * globalMult;
+        const min = 2 ** player.researches[5][1];
+        let multiplier2 = 2 * min * globalMult;
         if (player.upgrades[5][1] === 1) { multiplier2 *= calculateEffects.S5Upgrade1(); }
         if (player.upgrades[5][5] === 1) { multiplier2 *= 1000 * moreStars; }
         if (vacuum && player.upgrades[3][13] === 1) { multiplier2 *= (calculateEffects.S3Research6() / 2e5) ** 0.5 + 1; }
-        global.buildingsInfo.producing[5][2].setValue(multiplier2).allMultiply(player.buildings[5][2].current, production, calculateEffects.S5Research3() ** player.buildings[5][2].true).max(2 ** player.researches[5][1]);
+        global.buildingsInfo.producing[5][2].setValue(multiplier2).allMultiply(player.buildings[5][2].current, production, calculateEffects.S5Research3() ** player.buildings[5][2].true).max(min);
 
         let multiplier1 = 6 * (2 ** player.researches[5][0]) * globalMult;
         if (player.upgrades[5][0] === 1) { multiplier1 *= calculateEffects.S5Upgrade0(); }
@@ -1421,12 +1422,6 @@ export const buyUpgrades = (upgrade: number, stageIndex: number, type: 'upgrades
             } else if (stageIndex === 6) {
                 if (upgrade === 4) {
                     assignResetInformation.trueEnergy();
-                    if (player.stage.true < 8 && level[4] >= 4) {
-                        player.stage.true = 8;
-                        player.event = false;
-                        visualTrueStageUnlocks();
-                        playEvent(12);
-                    }
                 }
             }
         } else if (type === 'researchesExtra') {
@@ -1717,15 +1712,17 @@ export const buyStrangeness = (upgrade: number, stageIndex: number, type: 'stran
         const currency = player.cosmon[stageIndex];
 
         if (tree[upgrade] >= pointer.max[upgrade] || currency.current < pointer.cost[upgrade]) { return false; }
+        const addToLoadout = !auto && stageIndex === 0 && global.loadouts.open;
         const max = !auto && (player.toggles.max[2] !== global.hotkeys.shift);
         do {
             tree[upgrade]++;
             currency.current -= pointer.cost[upgrade];
             calculateResearchCost(upgrade, stageIndex, 'inflations');
+            if (addToLoadout) { global.loadouts.input.push(upgrade); }
         } while (max && currency.current >= pointer.cost[upgrade] && tree[upgrade] < pointer.max[upgrade]);
 
         /* Special cases */
-        if (!auto && stageIndex === 0) { loadoutsVisual(upgrade); }
+        if (addToLoadout) { loadoutsFinal(global.loadouts.input); }
         if (stageIndex === 0) {
             if (upgrade === 0) {
                 if (player.tree[1][2] < 1) {
@@ -1778,7 +1775,7 @@ export const inflationRefund = async(noConfirmation = false, loadout = false): P
     if (inflaton.current === inflaton.total && player.tree[0][0] < 1) { return true; }
     const challenge = player.challenges.active;
     if (!noConfirmation && !await Confirm(loadout ? 'Refund basic Inflations before loading this loadout?' :
-        `This will force a Stage reset${challenge !== null ? ' and restart current Challenge' : ''}, continue?`)) { return loadout; }
+        `This will force a Stage reset${challenge !== null ? ' and restart current Challenge' : ''} to refund basic Inflations, continue?`)) { return loadout; }
 
     if (challenge !== null) { challengeReset(); }
     stageFullReset();
@@ -1802,6 +1799,7 @@ export const inflationRefund = async(noConfirmation = false, loadout = false): P
     }
     if (!loadout) {
         numbersUpdate();
+        loadoutsFinal([]);
         if (globalSave.SRSettings[0]) { getId('SRMain').textContent = 'Inflations have been refunded'; }
     }
     return true;
@@ -2342,7 +2340,7 @@ const stageResetReward = (stageIndex: number) => {
             assignBuildingsProduction.strange1();
             exportReward[2] = Math.max(exportReward[2], strangelets) + strangelets * conversion;
         }
-        assignBuildingsProduction.strange0(false);
+        assignBuildingsProduction.strange0(stageIndex >= 4 ? false : undefined);
         exportReward[1] = Math.max(exportReward[1], quarks) + quarks * conversion;
         if (stageIndex >= 4) {
             const history = player.history.stage;
@@ -2878,6 +2876,12 @@ export const endResetUser = async() => {
 };
 
 const endReset = () => {
+    if (player.stage.true < 8) {
+        player.stage.true = 8;
+        player.event = false;
+        visualTrueStageUnlocks();
+        playEvent(12);
+    }
     if (player.stage.active < 6) { setActiveStage(1); }
     const resets = player.inflation.ends;
     const realTime = player.time.end;
@@ -3136,11 +3140,7 @@ export const enterExitChallengeUser = (index: number | null) => {
         addIntoLog(`Exited the ${global.challengesInfo[old].name}`);
         Notify(`Exited the ${global.challengesInfo[old].name}`);
     } else {
-        if (index === 0) {
-            if (!player.challenges.super && !player.inflation.vacuum) { return; }
-        } else if (index === 1) {
-            if (player.stage.true < 8 && player.verses[0].true < 6) { return; }
-        } else { return; }
+        if (!allowedToEnter(index)) { return; }
 
         challengeReset(index);
         addIntoLog(`Entered the ${global.challengesInfo[index].name}`);
