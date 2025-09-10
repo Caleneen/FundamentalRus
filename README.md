@@ -33,4 +33,4 @@ Intergalactic = межгалактический \
 Void = пустота \
 Abyss = бездна \
 Drops = капли \
-Puddles = лужи \
+Puddles = лужи
