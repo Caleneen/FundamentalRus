@@ -14,8 +14,8 @@
     <body>
         <aside id="loading">
             <h1 class="biggerWord">Fundamental</h1>
-            <p class="whiteText">Игра загружается. Если не загружается (попсле попытки перезагрузиться), то ты можешь это зарепортить тут: <a href="https://discord.gg/JftTEJW83d" target="_blank" rel="noopener noreferrer">официальный сервер discord</a> или <a href="https://github.com/awWhy/Fundamental/issues" target="_blank" rel="noopener noreferrer"> официальный github</a> или <a href="https://github.com/Caleneen/FundamentalRus/issues" target="_blank" rel="noopener noreferrer">github перевода</a></p>
-            <noscript>Java Script отключён, без него игра не будет рабтать</noscript>
+            <p class="whiteText">Игра загружается. Если не загружается (попсле попытки перезагрузиться), то ты можешь это зарепортить тут: <a href="https://discord.gg/JftTEJW83d" target="_blank" rel="noopener noreferrer">официальный сервер discord</a> or <a href="https://github.com/awWhy/Fundamental/issues" target="_blank" rel="noopener noreferrer">официальный github</a> или <a href="https://github.com/Caleneen/FundamentalRus/issues" target="_blank" rel="noopener noreferrer">github перевода</a></p>
+            <noscript>Java Script disabled, game will not work without it</noscript>
         </aside>
         <button type="button" id="globalToggle0" class="specialToggle" style="display: none;">OFF</button>
         <div id="bigWindow" style="display: none;"></div>
@@ -194,7 +194,7 @@
                                 <input type="number" id="autoWaitInput" step="any">
                                 <label for="autoWaitInput" class="popUpMenu" style="display: none;">Сколько структур за раз будет создаваться автоматически</label>
                             </div>
-                            <button type="button" id="toggleBuilding0" class="specialToggle">Всё ВКЛ</button>
+                            <button type="button" id="toggleAll" class="specialToggle">Всё ВКЛ</button>
                         </div>
                     </article>
                     <div id="stageInfo" class="center">
@@ -227,7 +227,7 @@
                             </section>
                         </div>
                         <div class="stage5Only">
-                            <p id="mainCapS5" class="cyanText">Солнечной массы после коллапса: <span class="orangeText">0</span><span id="mainCapHardS5"> | Хардкап: <span class="orangeText">0</span></span><span id="mainCapPostS5"> | После: <span class="orangeText">0</span></span><span id="timeSinceGalaxy" class="grayText"><br>(Время после последней галактики: <span class="orangeText">0 секунд</span>)</span></p>
+                            <p id="mainCapS5" class="cyanText">Солнечной массы после коллапса: <span class="orangeText">0</span><span id="mainCapHardS5"> | Хардкап: <span class="orangeText">0</span></span><span id="mainCapPostS5" class="hasTitle" data-title="Solar mass if had pending Black holes"> | После: <span class="orangeText">0</span></span><span id="timeSinceGalaxy" class="grayText"><br>(Время после последней галактики: <span class="orangeText">0 секунд</span>)</span></p>
                             <p id="elementsProductionS5" class="redText">Общее производство звёздной пыли: <span class="orangeText">0</span></p>
                             <p id="collapseBoostTotalS5" class="orchidText">Общий буст после коллапса: <span class="orangeText">1</span></p>
                             <p id="mergeBoostTotal" class="darkvioletText">Общий буст после слияния: <span class="grayText">1</span> ^2</p>
@@ -246,7 +246,7 @@
                                 <p id="mergeScore0" class="grayText"><span>Галактик:</span> <span id="mergeScore0Cur" class="greenText">0</span> <span>(<span class="greenText">1</span> за каждый)</span></p>
                                 <p id="mergeScore1" class="grayText"><span>Групп:</span> <span id="mergeScore1Cur" class="greenText">0</span> <span>(<span class="greenText">2</span> за каждый)</span></p>
                                 <p id="mergeScore2" class="grayText"><span>Кластеров:</span> <span id="mergeScore2Cur" class="greenText">0</span> <span>(<span class="greenText">4</span> за каждый)</span></p>
-                                <p class="darkvioletText"><span>Общий счёт:</span> <span id="mergeScoreTotal" class="greenText">0</span> <span>(<span id="mergeScoreAfter" class="greenText">0</span> после)</span></p>
+                                <p class="darkvioletText"><span>Общий счёт:</span> <span id="mergeScoreTotal" class="greenText">0</span> <span class="hasTitle" data-title="Merge score if to use all available resets">(<span id="mergeScoreAfter" class="greenText">0</span> после)</span></p>
                             </section>
                             <p id="universeTime" class="grayText">Universe age: <span class="orangeText">0 seconds</span> (Real: <span class="orangeText">0 seconds</span>)</p>
                         </div>
@@ -298,8 +298,8 @@
             <div id="upgradeTab" style="display: none;">
                 <section id="upgradeSubtabUpgrades" class="insideTab" aria-label="Текущая вкладка">
                     <div id="upgrades">
-                        <h2 id="upgradesHeader" class="biggerWord">Улучшения</h2>
-                        <section aria-labelledby="upgradesHeader">
+                        <h2 class="biggerWord">Улучшения</h2>
+                        <section aria-label="Улучшения">
                             <input type="image" src="Used_art/Missing.png" alt="Missing" draggable="false" id="upgrade1" aria-controls="upgradeCost upgradeEffect">
                             <input type="image" src="Used_art/Missing.png" alt="Missing" draggable="false" id="upgrade2" aria-controls="upgradeCost upgradeEffect">
                             <input type="image" src="Used_art/Missing.png" alt="Missing" draggable="false" id="upgrade3" aria-controls="upgradeCost upgradeEffect">
@@ -424,8 +424,8 @@
                     </div>
                 </section>
                 <section id="upgradeSubtabElements" class="insideTab" style="display: none;" aria-label="Current tab">
-                    <h2 id="elementsHeader" class="orangeText biggerWord">Элементы</h2>
-                    <section id="elementsGrid" aria-labelledby="elementsHeader">
+                    <h2 class="orangeText biggerWord">Элементы</h2>
+                    <section id="elementsGrid" aria-label="Элементы">
                         <input type="image" src="Used_art/Element0.png" alt="[0] Нейтроний" draggable="false" id="element0" class="elementType1" aria-controls="elementCost elementEffect" aria-hidden="true" tabindex="-1">
                         <input type="image" src="Used_art/Element1.png" alt="[1] Водород" draggable="false" id="element1" class="elementType1" aria-controls="elementCost elementEffect">
                         <input type="image" src="Used_art/Element2.png" alt="[2] Гелий" draggable="false" id="element2" class="elementType1" aria-controls="elementCost elementEffect">
@@ -813,7 +813,7 @@
             <div id="inflationTab" style="display: none;">
                 <section id="inflationSubtabInflations" class="insideTab" aria-label="Current tab">
                     <div class="center darkvioletText">
-                        <h2 id="inflationsHeader" class="biggerWord">Space matter</h2>
+                        <h2 class="biggerWord">Space matter</h2>
                         <p>Inflatons gain on Vacuum resets: <span class="greenText" id="inflatonGainTrue">1</span> (<span class="greenText">true</span>) | <span class="redText" id="inflatonGainFalse">1</span> (<span class="redText">false</span>)</p>
                         <p id="cosmonGain">Cosmon gain per Universe: <span class="whiteText">1</span> | End timer: <span id="endTime" class="whiteText">0</span></p>
                     </div>
@@ -834,7 +834,7 @@
                         </section>
                     </article>
                     <h2 class="darkvioletText bigWord">Inflations</h2>
-                    <article id="inflations" aria-labelledby="inflationsHeader">
+                    <article id="inflations" aria-label="Inflations">
                         <section id="inflationsTree1" class="researchesDiv" aria-label="Basic">
                             <label id="inflation1Tree1" class="whiteText stage1borderImage">
                                 <input type="image" src="Used_art/Time%20fast.png" alt="Overboost" draggable="false" aria-controls="inflationCost inflationEffect">
@@ -952,14 +952,14 @@
                     <article id="resetToggles">
                         <h2 class="center">Reset confirmations<span> and automatization toggles</span></h2>
                         <div>
-                            <section id="endToggleReset" aria-labelledby="endToggleImage">
-                                <img id="endToggleImage" src="Used_art/Missing.png" alt="End" class="hasTitle" data-title="End" loading="lazy" draggable="false">
+                            <section id="endToggleReset" aria-label="End">
+                                <img src="Used_art/Missing.png" alt="End" class="hasTitle" data-title="End" loading="lazy" draggable="false">
                                 <div>
                                     <button type="button" id="toggleConfirm6" class="toggleConfirm">Safe</button>
                                 </div>
                             </section>
-                            <section id="stageToggleReset" aria-labelledby="stageToggleImage">
-                                <img id="stageToggleImage" src="Used_art/Stage%20toggle.png" alt="Stage" class="stageBorderImage hasTitle" data-title="Stage" loading="lazy" draggable="false">
+                            <section id="stageToggleReset" aria-label="Stage">
+                                <img src="Used_art/Stage%20toggle.png" alt="Stage" class="stageBorderImage hasTitle" data-title="Stage" loading="lazy" draggable="false">
                                 <div style="position: relative;">
                                     <button type="button" id="toggleConfirm0" class="toggleConfirm">Safe</button>
                                     <button type="button" id="toggleAuto0Info" class="hollowButton stageAllborderButton" aria-label="Settings" aria-haspopup="menu" aria-controls="toggleAuto0Menu">!</button>
@@ -970,15 +970,15 @@
                                 </div>
                                 <button type="button" id="toggleAuto0" class="toggleAuto">Auto OFF</button>
                             </section>
-                            <section id="dischargeToggleReset" aria-labelledby="dischargeToggleImage">
-                                <img id="dischargeToggleImage" src="Used_art/Discharge%20toggle.png" alt="Discharge" class="hasTitle" data-title="Discharge" loading="lazy" draggable="false">
+                            <section id="dischargeToggleReset" aria-label="Discharge">
+                                <img src="Used_art/Discharge%20toggle.png" alt="Discharge" class="hasTitle" data-title="Discharge" loading="lazy" draggable="false">
                                 <div>
                                     <button type="button" id="toggleConfirm1" class="toggleConfirm">Safe</button>
                                 </div>
                                 <button type="button" id="toggleAuto1" class="toggleAuto">Auto OFF</button>
                             </section>
-                            <section id="vaporizationToggleReset" aria-labelledby="vaporizationToggleImage">
-                                <img id="vaporizationToggleImage" src="Used_art/Vaporization%20toggle.png" alt="Vaporization" class="hasTitle" data-title="Vaporization" loading="lazy" draggable="false">
+                            <section id="vaporizationToggleReset" aria-label="Vaporization">
+                                <img src="Used_art/Vaporization%20toggle.png" alt="Vaporization" class="hasTitle" data-title="Vaporization" loading="lazy" draggable="false">
                                 <div style="position: relative;">
                                     <button type="button" id="toggleConfirm2" class="toggleConfirm">Safe</button>
                                     <button type="button" id="toggleAuto2Info" class="hollowButton stage2borderButton" aria-label="Settings" aria-haspopup="menu" aria-controls="toggleAuto2Menu">!</button>
@@ -989,15 +989,15 @@
                                 </div>
                                 <button type="button" id="toggleAuto2" class="toggleAuto">Auto OFF</button>
                             </section>
-                            <section id="rankToggleReset" aria-labelledby="rankToggleImage">
-                                <img id="rankToggleImage" src="Used_art/Rank%20toggle.png" alt="Rank" class="hasTitle" data-title="Rank" loading="lazy" draggable="false">
+                            <section id="rankToggleReset" aria-label="Rank">
+                                <img src="Used_art/Rank%20toggle.png" alt="Rank" class="hasTitle" data-title="Rank" loading="lazy" draggable="false">
                                 <div>
                                     <button type="button" id="toggleConfirm3" class="toggleConfirm">Safe</button>
                                 </div>
                                 <button type="button" id="toggleAuto3" class="toggleAuto">Auto OFF</button>
                             </section>
-                            <section id="collapseToggleReset" aria-labelledby="collapseToggleImage">
-                                <img id="collapseToggleImage" src="Used_art/Collapse%20toggle.png" alt="Collapse" class="hasTitle" data-title="Collapse" loading="lazy" draggable="false">
+                            <section id="collapseToggleReset" aria-label="Collapse">
+                                <img src="Used_art/Collapse%20toggle.png" alt="Collapse" class="hasTitle" data-title="Collapse" loading="lazy" draggable="false">
                                 <div style="position: relative;">
                                     <button type="button" id="toggleConfirm4" class="toggleConfirm">Safe</button>
                                     <button type="button" id="toggleAuto4Info" class="hollowButton stage6borderButton" aria-label="Settings" aria-haspopup="menu" aria-controls="toggleAuto4Menu">!</button>
@@ -1008,8 +1008,8 @@
                                 </div>
                                 <button type="button" id="toggleAuto4" class="toggleAuto">Auto OFF</button>
                             </section>
-                            <section id="mergeToggleReset" aria-labelledby="mergeToggleImage">
-                                <img id="mergeToggleImage" src="Used_art/Merge%20toggle.png" alt="Merge" class="hasTitle" data-title="Merge" loading="lazy" draggable="false">
+                            <section id="mergeToggleReset" aria-label="Merge">
+                                <img src="Used_art/Merge%20toggle.png" alt="Merge" class="hasTitle" data-title="Merge" loading="lazy" draggable="false">
                                 <div style="position: relative;">
                                     <button type="button" id="toggleConfirm5" class="toggleConfirm">Safe</button>
                                     <button type="button" id="toggleAuto9Info" class="hollowButton stage5borderButton" aria-label="Settings" aria-haspopup="menu" aria-controls="toggleAuto9Menu">!</button>
@@ -1020,8 +1020,8 @@
                                 </div>
                                 <button type="button" id="toggleAuto9" class="toggleAuto">Auto OFF</button>
                             </section>
-                            <section id="nucleationToggleReset" aria-labelledby="nucleationToggleImage">
-                                <img id="nucleationToggleImage" src="Used_art/Missing.png" alt="Nucleation" class="hasTitle" data-title="Nucleation" loading="lazy" draggable="false">
+                            <section id="nucleationToggleReset" aria-label="Nucleation">
+                                <img src="Used_art/Missing.png" alt="Nucleation" class="hasTitle" data-title="Nucleation" loading="lazy" draggable="false">
                                 <div>
                                     <button type="button" id="toggleConfirm7" class="toggleConfirm">Safe</button>
                                     <button type="button" id="toggleAuto10Info" class="hollowButton stage4borderButton" aria-label="Settings" aria-haspopup="menu" aria-controls="toggleAuto10Menu">!</button>
